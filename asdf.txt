@@ -3,6 +3,8 @@ cmake instll
 
 
 ###install mic library 
+https://github.com/lava/matplotlib-cpp
+
 
 sudo apt update
 sudo apt install -y build-essential libasound2-dev libjack-jackd2-dev portaudio19-dev
