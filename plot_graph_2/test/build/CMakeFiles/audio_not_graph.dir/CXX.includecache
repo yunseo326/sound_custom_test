@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yunseo/sound_custom_test/plot_graph_2/test/2audio_not_graph.cpp
+iostream
+-
+vector
+-
+portaudio.h
+-
+algorithm
+-
+thread
+-
+
