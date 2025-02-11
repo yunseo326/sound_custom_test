@@ -29,12 +29,14 @@ set(plot_graph2 plot_graph_2.cpp)
 set(2audio_not_plot 2audio_not_graph.cpp)
 set(2audio_not_plot_gcc_phat 2audio_not_graph_gcc_phat.cpp)
 set(gcc_phat plot_gcc_phat.cpp)
+set(caldegree caldegree.cpp)
 
 # 실행 파일 생성
 add_executable(audio_graph ${plot_graph2})
 add_executable(audio_not_graph ${2audio_not_plot})
 add_executable(audio_not_graph_gcc_phat ${2audio_not_plot_gcc_phat})
 add_executable(gcc_phat ${gcc_phat})
+add_executable(caldegree ${caldegree})
 
 
 # fftw link 

@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/caldegree.dir/caldegree.cpp.o  -o caldegree   -L/usr/local/lib/libportaudio.so 

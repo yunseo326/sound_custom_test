@@ -137,6 +137,19 @@ audio_not_graph_gcc_phat/fast:
 .PHONY : audio_not_graph_gcc_phat/fast
 
 #=============================================================================
+# Target rules for targets named caldegree
+
+# Build rule for target.
+caldegree: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 caldegree
+.PHONY : caldegree
+
+# fast build rule for target.
+caldegree/fast:
+	$(MAKE) -f CMakeFiles/caldegree.dir/build.make CMakeFiles/caldegree.dir/build
+.PHONY : caldegree/fast
+
+#=============================================================================
 # Target rules for targets named audio_not_graph
 
 # Build rule for target.
@@ -216,6 +229,33 @@ audio_graph/fast:
 	$(MAKE) -f CMakeFiles/audio_not_graph_gcc_phat.dir/build.make CMakeFiles/audio_not_graph_gcc_phat.dir/2audio_not_graph_gcc_phat.cpp.s
 .PHONY : 2audio_not_graph_gcc_phat.cpp.s
 
+caldegree.o: caldegree.cpp.o
+
+.PHONY : caldegree.o
+
+# target to build an object file
+caldegree.cpp.o:
+	$(MAKE) -f CMakeFiles/caldegree.dir/build.make CMakeFiles/caldegree.dir/caldegree.cpp.o
+.PHONY : caldegree.cpp.o
+
+caldegree.i: caldegree.cpp.i
+
+.PHONY : caldegree.i
+
+# target to preprocess a source file
+caldegree.cpp.i:
+	$(MAKE) -f CMakeFiles/caldegree.dir/build.make CMakeFiles/caldegree.dir/caldegree.cpp.i
+.PHONY : caldegree.cpp.i
+
+caldegree.s: caldegree.cpp.s
+
+.PHONY : caldegree.s
+
+# target to generate assembly for a file
+caldegree.cpp.s:
+	$(MAKE) -f CMakeFiles/caldegree.dir/build.make CMakeFiles/caldegree.dir/caldegree.cpp.s
+.PHONY : caldegree.cpp.s
+
 plot_gcc_phat.o: plot_gcc_phat.cpp.o
 
 .PHONY : plot_gcc_phat.o
@@ -279,6 +319,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... gcc_phat"
 	@echo "... audio_not_graph_gcc_phat"
+	@echo "... caldegree"
 	@echo "... audio_not_graph"
 	@echo "... edit_cache"
 	@echo "... audio_graph"
@@ -288,6 +329,9 @@ help:
 	@echo "... 2audio_not_graph_gcc_phat.o"
 	@echo "... 2audio_not_graph_gcc_phat.i"
 	@echo "... 2audio_not_graph_gcc_phat.s"
+	@echo "... caldegree.o"
+	@echo "... caldegree.i"
+	@echo "... caldegree.s"
 	@echo "... plot_gcc_phat.o"
 	@echo "... plot_gcc_phat.i"
 	@echo "... plot_gcc_phat.s"

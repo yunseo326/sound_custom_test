@@ -133,14 +133,14 @@ int main() {
     PaStreamParameters inputParameters1, inputParameters2;
 
     // 첫 번째 오디오 장치 설정 (마이크 1)
-    inputParameters1.device = 27;  // 첫 번째 USB 마이크의 device ID
+    inputParameters1.device = 22;  // 첫 번째 USB 마이크의 device ID
     inputParameters1.channelCount = 1;
     inputParameters1.sampleFormat = paFloat32;
     inputParameters1.suggestedLatency = Pa_GetDeviceInfo(inputParameters1.device)->defaultLowInputLatency;
     inputParameters1.hostApiSpecificStreamInfo = nullptr;
 
     // 두 번째 오디오 장치 설정 (마이크 2)
-    inputParameters2.device = 29;  // 두 번째 USB 마이크의 device ID
+    inputParameters2.device = 24;  // 두 번째 USB 마이크의 device ID
     inputParameters2.channelCount = 1;
     inputParameters2.sampleFormat = paFloat32;
     inputParameters2.suggestedLatency = Pa_GetDeviceInfo(inputParameters2.device)->defaultLowInputLatency;
@@ -222,6 +222,8 @@ int main() {
 
 	        // 지연 결과 출력
 	        cout << "Estimated delay: " << delay << " samples" << endl;
+	        
+	        
 		}
         plt::pause(0.01);  // 잠시 대기 (그래프 갱신을 위한 시간 조정)
     }
