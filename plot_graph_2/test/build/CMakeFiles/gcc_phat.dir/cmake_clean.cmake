@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/gcc_phat.dir/plot_gcc_phat.cpp.o"
+  "CMakeFiles/gcc_phat.dir/plot_gcc_phat.cpp.o.d"
   "gcc_phat"
   "gcc_phat.pdb"
 )

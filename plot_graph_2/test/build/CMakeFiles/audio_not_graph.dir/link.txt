@@ -1,1 +1,1 @@
-/usr/bin/c++     CMakeFiles/audio_not_graph.dir/2audio_not_graph.cpp.o  -o audio_not_graph   -L/usr/local/lib/libportaudio.so  -Wl,-rpath,/usr/local/lib/libportaudio.so:/usr/local/lib /usr/local/lib/libportaudio.so -lpthread 
+/usr/bin/c++ CMakeFiles/audio_not_graph.dir/2audio_not_graph.cpp.o -o audio_not_graph   -L/usr/lib/x86_64-linux-gnu/libportaudio.so  -Wl,-rpath,/usr/lib/x86_64-linux-gnu/libportaudio.so /usr/lib/x86_64-linux-gnu/libportaudio.so 

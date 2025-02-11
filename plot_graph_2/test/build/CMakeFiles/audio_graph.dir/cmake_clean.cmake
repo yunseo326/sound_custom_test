@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/audio_graph.dir/plot_graph_2.cpp.o"
+  "CMakeFiles/audio_graph.dir/plot_graph_2.cpp.o.d"
   "audio_graph"
   "audio_graph.pdb"
 )
