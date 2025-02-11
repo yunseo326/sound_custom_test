@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/yunseo/sound_custom_test/plot_graph_2/test/build
 
 # The main recursive "all" target.
 all: CMakeFiles/gcc_phat.dir/all
+all: CMakeFiles/4audio_not_graph_gcc_phat.dir/all
 all: CMakeFiles/audio_not_graph_gcc_phat.dir/all
 all: CMakeFiles/caldegree.dir/all
 all: CMakeFiles/audio_not_graph.dir/all
@@ -68,6 +69,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/gcc_phat.dir/clean
+clean: CMakeFiles/4audio_not_graph_gcc_phat.dir/clean
 clean: CMakeFiles/audio_not_graph_gcc_phat.dir/clean
 clean: CMakeFiles/caldegree.dir/clean
 clean: CMakeFiles/audio_not_graph.dir/clean
@@ -82,7 +84,7 @@ clean: CMakeFiles/audio_graph.dir/clean
 CMakeFiles/gcc_phat.dir/all:
 	$(MAKE) -f CMakeFiles/gcc_phat.dir/build.make CMakeFiles/gcc_phat.dir/depend
 	$(MAKE) -f CMakeFiles/gcc_phat.dir/build.make CMakeFiles/gcc_phat.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yunseo/sound_custom_test/plot_graph_2/test/build/CMakeFiles --progress-num=9,10 "Built target gcc_phat"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yunseo/sound_custom_test/plot_graph_2/test/build/CMakeFiles --progress-num=11,12 "Built target gcc_phat"
 .PHONY : CMakeFiles/gcc_phat.dir/all
 
 # Build rule for subdir invocation for target.
@@ -103,13 +105,40 @@ CMakeFiles/gcc_phat.dir/clean:
 .PHONY : CMakeFiles/gcc_phat.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/4audio_not_graph_gcc_phat.dir
+
+# All Build rule for target.
+CMakeFiles/4audio_not_graph_gcc_phat.dir/all:
+	$(MAKE) -f CMakeFiles/4audio_not_graph_gcc_phat.dir/build.make CMakeFiles/4audio_not_graph_gcc_phat.dir/depend
+	$(MAKE) -f CMakeFiles/4audio_not_graph_gcc_phat.dir/build.make CMakeFiles/4audio_not_graph_gcc_phat.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yunseo/sound_custom_test/plot_graph_2/test/build/CMakeFiles --progress-num=1,2 "Built target 4audio_not_graph_gcc_phat"
+.PHONY : CMakeFiles/4audio_not_graph_gcc_phat.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/4audio_not_graph_gcc_phat.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yunseo/sound_custom_test/plot_graph_2/test/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/4audio_not_graph_gcc_phat.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yunseo/sound_custom_test/plot_graph_2/test/build/CMakeFiles 0
+.PHONY : CMakeFiles/4audio_not_graph_gcc_phat.dir/rule
+
+# Convenience name for target.
+4audio_not_graph_gcc_phat: CMakeFiles/4audio_not_graph_gcc_phat.dir/rule
+
+.PHONY : 4audio_not_graph_gcc_phat
+
+# clean rule for target.
+CMakeFiles/4audio_not_graph_gcc_phat.dir/clean:
+	$(MAKE) -f CMakeFiles/4audio_not_graph_gcc_phat.dir/build.make CMakeFiles/4audio_not_graph_gcc_phat.dir/clean
+.PHONY : CMakeFiles/4audio_not_graph_gcc_phat.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/audio_not_graph_gcc_phat.dir
 
 # All Build rule for target.
 CMakeFiles/audio_not_graph_gcc_phat.dir/all:
 	$(MAKE) -f CMakeFiles/audio_not_graph_gcc_phat.dir/build.make CMakeFiles/audio_not_graph_gcc_phat.dir/depend
 	$(MAKE) -f CMakeFiles/audio_not_graph_gcc_phat.dir/build.make CMakeFiles/audio_not_graph_gcc_phat.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yunseo/sound_custom_test/plot_graph_2/test/build/CMakeFiles --progress-num=5,6 "Built target audio_not_graph_gcc_phat"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yunseo/sound_custom_test/plot_graph_2/test/build/CMakeFiles --progress-num=7,8 "Built target audio_not_graph_gcc_phat"
 .PHONY : CMakeFiles/audio_not_graph_gcc_phat.dir/all
 
 # Build rule for subdir invocation for target.
@@ -136,7 +165,7 @@ CMakeFiles/audio_not_graph_gcc_phat.dir/clean:
 CMakeFiles/caldegree.dir/all:
 	$(MAKE) -f CMakeFiles/caldegree.dir/build.make CMakeFiles/caldegree.dir/depend
 	$(MAKE) -f CMakeFiles/caldegree.dir/build.make CMakeFiles/caldegree.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yunseo/sound_custom_test/plot_graph_2/test/build/CMakeFiles --progress-num=7,8 "Built target caldegree"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yunseo/sound_custom_test/plot_graph_2/test/build/CMakeFiles --progress-num=9,10 "Built target caldegree"
 .PHONY : CMakeFiles/caldegree.dir/all
 
 # Build rule for subdir invocation for target.
@@ -163,7 +192,7 @@ CMakeFiles/caldegree.dir/clean:
 CMakeFiles/audio_not_graph.dir/all:
 	$(MAKE) -f CMakeFiles/audio_not_graph.dir/build.make CMakeFiles/audio_not_graph.dir/depend
 	$(MAKE) -f CMakeFiles/audio_not_graph.dir/build.make CMakeFiles/audio_not_graph.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yunseo/sound_custom_test/plot_graph_2/test/build/CMakeFiles --progress-num=3,4 "Built target audio_not_graph"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yunseo/sound_custom_test/plot_graph_2/test/build/CMakeFiles --progress-num=5,6 "Built target audio_not_graph"
 .PHONY : CMakeFiles/audio_not_graph.dir/all
 
 # Build rule for subdir invocation for target.
@@ -190,7 +219,7 @@ CMakeFiles/audio_not_graph.dir/clean:
 CMakeFiles/audio_graph.dir/all:
 	$(MAKE) -f CMakeFiles/audio_graph.dir/build.make CMakeFiles/audio_graph.dir/depend
 	$(MAKE) -f CMakeFiles/audio_graph.dir/build.make CMakeFiles/audio_graph.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yunseo/sound_custom_test/plot_graph_2/test/build/CMakeFiles --progress-num=1,2 "Built target audio_graph"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yunseo/sound_custom_test/plot_graph_2/test/build/CMakeFiles --progress-num=3,4 "Built target audio_graph"
 .PHONY : CMakeFiles/audio_graph.dir/all
 
 # Build rule for subdir invocation for target.

@@ -28,6 +28,7 @@ set(MATPLOTLIB_CPP_PATH /home/yunseo/sound_custom_test/plot_graph_2/test/matplot
 set(plot_graph2 plot_graph_2.cpp)
 set(2audio_not_plot 2audio_not_graph.cpp)
 set(2audio_not_plot_gcc_phat 2audio_not_graph_gcc_phat.cpp)
+set(4audio_not_plot_gcc_phat 4audio_not_graph_gcc_phat.cpp)
 set(gcc_phat plot_gcc_phat.cpp)
 set(caldegree caldegree.cpp)
 
@@ -35,12 +36,14 @@ set(caldegree caldegree.cpp)
 add_executable(audio_graph ${plot_graph2})
 add_executable(audio_not_graph ${2audio_not_plot})
 add_executable(audio_not_graph_gcc_phat ${2audio_not_plot_gcc_phat})
+add_executable(4audio_not_graph_gcc_phat ${4audio_not_plot_gcc_phat})
 add_executable(gcc_phat ${gcc_phat})
 add_executable(caldegree ${caldegree})
 
 
 # fftw link 
 target_link_libraries(audio_not_graph_gcc_phat PRIVATE fftw3)
+target_link_libraries(4audio_not_graph_gcc_phat PRIVATE fftw3)
 target_link_libraries(gcc_phat PRIVATE fftw3)
 
 find_package(ALSA REQUIRED)
@@ -53,10 +56,12 @@ target_link_libraries(audio_not_graph PRIVATE Threads::Threads)
 target_link_libraries(audio_graph PRIVATE ${PORTAUDIO_LIBRARY})
 target_link_libraries(audio_not_graph PRIVATE ${PORTAUDIO_LIBRARY})
 target_link_libraries(audio_not_graph_gcc_phat PRIVATE ${PORTAUDIO_LIBRARY})
+target_link_libraries(4audio_not_graph_gcc_phat PRIVATE ${PORTAUDIO_LIBRARY})
 
 # Matplotlib-C++ 경로에 있는 헤더 파일 포함
 target_include_directories(audio_graph PRIVATE ${MATPLOTLIB_CPP_PATH})
 target_include_directories(audio_not_graph_gcc_phat PRIVATE ${MATPLOTLIB_CPP_PATH})
+target_include_directories(4audio_not_graph_gcc_phat PRIVATE ${MATPLOTLIB_CPP_PATH})
 
 # Matplotlib-C++의 경우, matplotlibcpp.h 헤더를 직접 사용할 수 있도록 설정
 include_directories(${MATPLOTLIB_CPP_PATH})
@@ -64,4 +69,5 @@ include_directories(${MATPLOTLIB_CPP_PATH})
 find_package(Python3 REQUIRED COMPONENTS Development)  
 target_link_libraries(audio_graph PRIVATE Python3::Python)
 target_link_libraries(audio_not_graph_gcc_phat PRIVATE Python3::Python)
+target_link_libraries(4audio_not_graph_gcc_phat PRIVATE Python3::Python)
 

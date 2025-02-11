@@ -34,7 +34,7 @@ numpy/arrayobject.h
 opencv2/opencv.hpp
 -
 
-/home/yunseo/sound_custom_test/plot_graph_2/test/2audio_not_graph_gcc_phat.cpp
+/home/yunseo/sound_custom_test/plot_graph_2/test/4audio_not_graph_gcc_phat.cpp
 iostream
 -
 vector

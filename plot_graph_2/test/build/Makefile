@@ -124,6 +124,19 @@ gcc_phat/fast:
 .PHONY : gcc_phat/fast
 
 #=============================================================================
+# Target rules for targets named 4audio_not_graph_gcc_phat
+
+# Build rule for target.
+4audio_not_graph_gcc_phat: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 4audio_not_graph_gcc_phat
+.PHONY : 4audio_not_graph_gcc_phat
+
+# fast build rule for target.
+4audio_not_graph_gcc_phat/fast:
+	$(MAKE) -f CMakeFiles/4audio_not_graph_gcc_phat.dir/build.make CMakeFiles/4audio_not_graph_gcc_phat.dir/build
+.PHONY : 4audio_not_graph_gcc_phat/fast
+
+#=============================================================================
 # Target rules for targets named audio_not_graph_gcc_phat
 
 # Build rule for target.
@@ -229,6 +242,33 @@ audio_graph/fast:
 	$(MAKE) -f CMakeFiles/audio_not_graph_gcc_phat.dir/build.make CMakeFiles/audio_not_graph_gcc_phat.dir/2audio_not_graph_gcc_phat.cpp.s
 .PHONY : 2audio_not_graph_gcc_phat.cpp.s
 
+4audio_not_graph_gcc_phat.o: 4audio_not_graph_gcc_phat.cpp.o
+
+.PHONY : 4audio_not_graph_gcc_phat.o
+
+# target to build an object file
+4audio_not_graph_gcc_phat.cpp.o:
+	$(MAKE) -f CMakeFiles/4audio_not_graph_gcc_phat.dir/build.make CMakeFiles/4audio_not_graph_gcc_phat.dir/4audio_not_graph_gcc_phat.cpp.o
+.PHONY : 4audio_not_graph_gcc_phat.cpp.o
+
+4audio_not_graph_gcc_phat.i: 4audio_not_graph_gcc_phat.cpp.i
+
+.PHONY : 4audio_not_graph_gcc_phat.i
+
+# target to preprocess a source file
+4audio_not_graph_gcc_phat.cpp.i:
+	$(MAKE) -f CMakeFiles/4audio_not_graph_gcc_phat.dir/build.make CMakeFiles/4audio_not_graph_gcc_phat.dir/4audio_not_graph_gcc_phat.cpp.i
+.PHONY : 4audio_not_graph_gcc_phat.cpp.i
+
+4audio_not_graph_gcc_phat.s: 4audio_not_graph_gcc_phat.cpp.s
+
+.PHONY : 4audio_not_graph_gcc_phat.s
+
+# target to generate assembly for a file
+4audio_not_graph_gcc_phat.cpp.s:
+	$(MAKE) -f CMakeFiles/4audio_not_graph_gcc_phat.dir/build.make CMakeFiles/4audio_not_graph_gcc_phat.dir/4audio_not_graph_gcc_phat.cpp.s
+.PHONY : 4audio_not_graph_gcc_phat.cpp.s
+
 caldegree.o: caldegree.cpp.o
 
 .PHONY : caldegree.o
@@ -318,6 +358,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... gcc_phat"
+	@echo "... 4audio_not_graph_gcc_phat"
 	@echo "... audio_not_graph_gcc_phat"
 	@echo "... caldegree"
 	@echo "... audio_not_graph"
@@ -329,6 +370,9 @@ help:
 	@echo "... 2audio_not_graph_gcc_phat.o"
 	@echo "... 2audio_not_graph_gcc_phat.i"
 	@echo "... 2audio_not_graph_gcc_phat.s"
+	@echo "... 4audio_not_graph_gcc_phat.o"
+	@echo "... 4audio_not_graph_gcc_phat.i"
+	@echo "... 4audio_not_graph_gcc_phat.s"
 	@echo "... caldegree.o"
 	@echo "... caldegree.i"
 	@echo "... caldegree.s"
