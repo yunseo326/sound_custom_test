@@ -35,7 +35,7 @@ add_executable(audio_graph ${plot_graph2})
 add_executable(audio_not_graph ${2audio_not_plot})
 add_executable(audio_not_graph_gcc_phat ${2audio_not_plot_gcc_phat})
 add_executable(gcc_phat ${gcc_phat})
-
+add_executable(caldegree ${caldegree})
 
 # fftw link 
 target_link_libraries(audio_not_graph_gcc_phat PRIVATE fftw3)

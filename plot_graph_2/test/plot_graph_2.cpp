@@ -190,61 +190,71 @@ int main() {
 
     // 실시간으로 오디오 데이터를 처리하고 그래프를 그리는 루프
     while (true) {
-        // 네 개의 입력 데이터에 대해 실시간 그래프 갱신
-        plt::cla();  // 그래프 초기화
+        try {
+            plt::clf();  // 그래프 초기화
 
-        // 첫 번째 마이크의 오디오 데이터를 그래프에 그리기
-        plt::subplot(4, 1, 1);
-        plt::plot(std::vector<float>(inputData1, inputData1 + FRAMES_PER_BUFFER));
-        plt::title("Input 1");
-        
-        plt::xlim(0, FRAMES_PER_BUFFER);   // x축 범위 설정
-        plt::ylim(-0.5, 0.5);              // y축 범위 설정
+            // 첫 번째 마이크의 오디오 데이터를 그래프에 그리기
+            plt::subplot(4, 1, 1);
+            plt::plot(std::vector<float>(inputData1, inputData1 + FRAMES_PER_BUFFER));
+            plt::title("Input 1");
+            
+            plt::xlim(0, FRAMES_PER_BUFFER);   // x축 범위 설정
+            plt::ylim(-0.5, 0.5);              // y축 범위 설정
 
-        // 두 번째 마이크의 오디오 데이터를 그래프에 그리기
-        plt::subplot(4, 1, 2);
-        plt::plot(std::vector<float>(inputData2, inputData2 + FRAMES_PER_BUFFER));
-        plt::title("Input 2");
-        
-        plt::xlim(0, FRAMES_PER_BUFFER);   // x축 범위 설정
-        plt::ylim(-0.5, 0.5);              // y축 범위 설정
+            // 두 번째 마이크의 오디오 데이터를 그래프에 그리기
+            plt::subplot(4, 1, 2);
+            plt::plot(std::vector<float>(inputData2, inputData2 + FRAMES_PER_BUFFER));
+            plt::title("Input 2");
+            
+            plt::xlim(0, FRAMES_PER_BUFFER);   // x축 범위 설정
+            plt::ylim(-0.5, 0.5);              // y축 범위 설정
 
-        // 세 번째 마이크의 오디오 데이터를 그래프에 그리기
-        plt::subplot(4, 1, 3);
-        plt::plot(std::vector<float>(inputData3, inputData3 + FRAMES_PER_BUFFER));
-        plt::title("Input 3");
-        
-        plt::xlim(0, FRAMES_PER_BUFFER);   // x축 범위 설정
-        plt::ylim(-0.5, 0.5);              // y축 범위 설정
+            // 세 번째 마이크의 오디오 데이터를 그래프에 그리기
+            plt::subplot(4, 1, 3);
+            plt::plot(std::vector<float>(inputData3, inputData3 + FRAMES_PER_BUFFER));
+            plt::title("Input 3");
+            
+            plt::xlim(0, FRAMES_PER_BUFFER);   // x축 범위 설정
+            plt::ylim(-0.5, 0.5);              // y축 범위 설정
 
-        // 네 번째 마이크의 오디오 데이터를 그래프에 그리기
-        plt::subplot(4, 1, 4);
-        plt::plot(std::vector<float>(inputData4, inputData4 + FRAMES_PER_BUFFER));
-        plt::title("Input 4");
-        
-        plt::xlim(0, FRAMES_PER_BUFFER);   // x축 범위 설정
-        plt::ylim(-0.5, 0.5);              // y축 범위 설정
+            // 네 번째 마이크의 오디오 데이터를 그래프에 그리기
+            plt::subplot(4, 1, 4);
+            plt::plot(std::vector<float>(inputData4, inputData4 + FRAMES_PER_BUFFER));
+            plt::title("Input 4");
+            
+            plt::xlim(0, FRAMES_PER_BUFFER);   // x축 범위 설정
+            plt::ylim(-0.5, 0.5);              // y축 범위 설정
 
-        // Find the index of the maximum value in all inputData arrays
-        float* maxPtr1 = std::max_element(inputData1, inputData1+FRAMES_PER_BUFFER);
-        float* maxPtr2 = std::max_element(inputData2, inputData2+FRAMES_PER_BUFFER);
-        float* maxPtr3 = std::max_element(inputData3, inputData3+FRAMES_PER_BUFFER);
-        float* maxPtr4 = std::max_element(inputData4, inputData4+FRAMES_PER_BUFFER);
-        
-        if (*maxPtr1 >= THRESHOLD && *maxPtr2 >= THRESHOLD && *maxPtr3 >= THRESHOLD && *maxPtr4 >= THRESHOLD){
-            int maxIndex1 = std::distance(inputData1, maxPtr1);        
-            int maxIndex2 = std::distance(inputData2, maxPtr2);
-            int maxIndex3 = std::distance(inputData3, maxPtr3);
-            int maxIndex4 = std::distance(inputData4, maxPtr4);
+            // Find the index of the maximum value in all inputData arrays
+            float* maxPtr1 = std::max_element(inputData1, inputData1+FRAMES_PER_BUFFER);
+            float* maxPtr2 = std::max_element(inputData2, inputData2+FRAMES_PER_BUFFER);
+            float* maxPtr3 = std::max_element(inputData3, inputData3+FRAMES_PER_BUFFER);
+            float* maxPtr4 = std::max_element(inputData4, inputData4+FRAMES_PER_BUFFER);
+            
+            if (*maxPtr1 >= THRESHOLD && *maxPtr2 >= THRESHOLD && *maxPtr3 >= THRESHOLD && *maxPtr4 >= THRESHOLD){
+                int maxIndex1 = std::distance(inputData1, maxPtr1);        
+                int maxIndex2 = std::distance(inputData2, maxPtr2);
+                int maxIndex3 = std::distance(inputData3, maxPtr3);
+                int maxIndex4 = std::distance(inputData4, maxPtr4);
 
-            // Print the index of the max values
-            std::cout << "Max Value 1:   " << *maxPtr1 << "  index  "<< maxIndex1 <<std::endl;
-            std::cout << "Max Value 2:   " << *maxPtr2 << "  index  "<< maxIndex2 <<std::endl;
-            std::cout << "Max Value 3:   " << *maxPtr3 << "  index  "<< maxIndex3 <<std::endl;
-            std::cout << "Max Value 4:   " << *maxPtr4 << "  index  "<< maxIndex4 <<std::endl;
-            std::cout << "difference :   " << *maxPtr1 - *maxPtr2 << "  index  "<< maxIndex1 - maxIndex2 <<std::endl;
+                // Print the index of the max values
+                std::cout << "Max Value 1:   " << *maxPtr1 << "  index  "<< maxIndex1 <<std::endl;
+                std::cout << "Max Value 2:   " << *maxPtr2 << "  index  "<< maxIndex2 <<std::endl;
+                std::cout << "Max Value 3:   " << *maxPtr3 << "  index  "<< maxIndex3 <<std::endl;
+                std::cout << "Max Value 4:   " << *maxPtr4 << "  index  "<< maxIndex4 <<std::endl;
+                std::cout << "difference :   " << *maxPtr1 - *maxPtr2 << "  index  "<< maxIndex1 - maxIndex2 <<std::endl;
+            }
+            plt::pause(0.01);
+        } catch (const std::runtime_error& e) {
+            std::cerr << "Error during plotting: " << e.what() << std::endl;
+            break;
+        } catch (const std::exception& e) {
+            std::cerr << "Standard exception during plotting: " << e.what() << std::endl;
+            break;
+        } catch (...) {
+            std::cerr << "Unknown error during plotting." << std::endl;
+            break;
         }
-        plt::draw();
     }
 
     // 스트림 종료
