@@ -35,6 +35,13 @@ float savedata3[FRAMES_PER_BUFFER];
 float savedata4[FRAMES_PER_BUFFER];
 
 
+struct AudioResult{
+	double angle_1;
+	double angle_2;
+	double angle_3;
+	double angle_4;
+	int direction;
+};
 
 
 #include <iostream>
@@ -45,11 +52,14 @@ float savedata4[FRAMES_PER_BUFFER];
 const double DISTANCE_MIC = 0.4; // 마이크 간 거리
 const double SPEED_SOUND = 343.0;
 
-double calculate_8_angles(double alpha,double beta,double gamma,double omega, int direction);
+AudioResult calculate_8_angles(double alpha,double beta,double gamma,double omega, int direction);
 int categorize_values(double value, double value2, double value3, double value4);
 
 // 마이크 간 시간 차이 및 최종 방향 계산
-double process_audio(double frame1,double frame2,double frame3,double frame4) {
+AudioResult process_audio(double frame1,double frame2,double frame3,double frame4) {
+    
+    AudioResult cal_result;
+
     double time_delay_1 = frame1 / SAMPLE_RATE;
     double time_delay_2 = frame2 / SAMPLE_RATE;
     double time_delay_3 = frame3 / SAMPLE_RATE;
@@ -60,62 +70,72 @@ double process_audio(double frame1,double frame2,double frame3,double frame4) {
     double gamma = std::acos((SPEED_SOUND * time_delay_3) / DISTANCE_MIC) * 180.0 / M_PI;
     double omega = std::acos((SPEED_SOUND * time_delay_4) / DISTANCE_MIC) * 180.0 / M_PI;
     
-    double direction = categorize_values(alpha,beta,gamma,omega);
-    double angle_1,angle_2,angle_3,angle_4 = calculate_8_angles(alpha,beta,gamma,omega,direction);
-    
-    return angle_1,angle_2,angle_3,angle_4,direction;
+    int direction = categorize_values(alpha,beta,gamma,omega);
+    cal_result = calculate_8_angles(alpha,beta,gamma,omega,direction);
+    cal_result.direction = direction;
+    return cal_result;
 }
 
 // 4분면 정하기
 int categorize_values(double value, double value2, double value3, double value4) {
     if (value < 90 && value3 > 90) {
-        if (value2 < 90 && value4 > 90)
+        if (value2 < 90 && value4 >= 90)
             return 1;
-        else
+        else if (value >= 90 && value3 < 90){
             return 2;
+        }
+        else 
+            return 0;
     } else {
         if (value2 < 90 && value4 > 90)
             return 4;
-        else
+        else if (value2 >= 90 && value3 < 90){
             return 3;
+        }
+        else
+            return 0;
     }
 }
 
 // 초기 각도로부터 8개의 방향 각도 계산
-double calculate_8_angles(double alpha,double beta,double gamma,double omega, int direction) {
+AudioResult calculate_8_angles(double alpha,double beta,double gamma,double omega, int direction) {
 
     double phi_alpha1;
     double phi_beta1;
     double phi_gamma1;
     double phi_omega1;
     
+    AudioResult result;
+    
     switch (direction) {
+        case 0:
+               cout << "direction error not calculate" << endl;
         case 1:
-		phi_alpha1 = 90-alpha; 
-		phi_beta1 = beta;
-		phi_gamma1 = gamma-90; 
-		phi_omega1 = 180-omega;
+		result.angle_1 = 90-alpha; 
+		result.angle_2 = beta;
+		result.angle_3 = gamma-90; 
+		result.angle_4 = 180-omega;
                break;
         case 2:
-		phi_alpha1 = 90+alpha;
-		phi_beta1 = beta;
-		phi_gamma1 = 270-gamma;
-		phi_omega1 = 180-omega;
+		result.angle_1 = 90+alpha;
+		result.angle_2 = beta;
+		result.angle_3 = 270-gamma;
+		result.angle_4 = 180-omega;
                break;
         case 3:
-		phi_alpha1 = 90+alpha;
-		phi_beta1 = 360-beta;
-		phi_gamma1 = 270-gamma;
-		phi_omega1 = 180+omega;
+		result.angle_1 = 90+alpha;
+		result.angle_2 = 360-beta;
+		result.angle_3 = 270-gamma;
+		result.angle_4 = 180+omega;
                break;
         case 4:
-		phi_alpha1 = 450-alpha;
-		phi_beta1 = 360-beta; 
-		phi_gamma1 = 270+gamma;
-		phi_omega1 = 180+omega;
+		result.angle_1 = 450-alpha;
+		result.angle_2 = 360-beta; 
+		result.angle_3 = 270+gamma;
+		result.angle_4 = 180+omega;
                break;
     }
-    return phi_alpha1, phi_beta1, phi_gamma1, phi_omega1;
+    return result;
   
 }
 
@@ -344,7 +364,6 @@ int main() {
     }
 
     // 그래프 초기화
-    plt::backend("TkAgg");
     plt::ion();  // 인터랙티브 모드 활성화
 
     // 스트림 시작 (마이크 1, 마이크 2, 마이크 3, 마이크 4)
@@ -448,17 +467,18 @@ int main() {
             int delay34 = gcc_phat(vecinput3, vecinput4, SAMPLE_RATE);
             int delay41 = gcc_phat(vecinput4, vecinput1, SAMPLE_RATE);
 
-
-            double cal_angle_1,cal_angle_2,cal_angle_3,cal_angle_4,cal_direction = process_audio(delay12, delay23, delay34, delay41);
+	     AudioResult print_result;
+             print_result = process_audio(delay12, delay23, delay34, delay41);
 
             
-
+	    if (print_result.direction != 0){
             // 지연 결과 출력
-            cout << "direction " << cal_direction << " samples" << endl;
-            cout << "Estimated delay between mic 1 and mic 2: " << cal_angle_1 << " samples" << endl;
-            cout << "Estimated delay between mic 2 and mic 3: " << cal_angle_2 << " samples" << endl;
-            cout << "Estimated delay between mic 3 and mic 4: " << cal_angle_3 << " samples" << endl;
-            cout << "Estimated delay between mic 4 and mic 1: " << cal_angle_4 << " samples" << endl;
+            	cout << "direction " << print_result.direction << " samples" << endl;
+            	cout << "Estimated delay between mic 1 and mic 2: " << print_result.angle_1 << " samples" << endl;
+            	cout << "Estimated delay between mic 2 and mic 3: " << print_result.angle_2 << " samples" << endl;
+            	cout << "Estimated delay between mic 3 and mic 4: " << print_result.angle_3 << " samples" << endl;
+            	cout << "Estimated delay between mic 4 and mic 1: " << print_result.angle_4 << " samples" << endl;
+            }
         }
         
         plt::pause(0.01);  // 잠시 대기 (그래프 갱신을 위한 시간 조정)
