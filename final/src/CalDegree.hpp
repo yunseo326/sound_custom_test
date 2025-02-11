@@ -28,7 +28,7 @@ namespace CalDegree {
     
     // 마이크 간 시간 차이 계산
     void _fft(CVector &signal, bool inverse = false);
-    int _gcc_phat(const vector<double> &x, const vector<double> &y, int sample_rate);
+    int _gcc_phat(const vector<double> &x, const vector<double> &y);
     
     // 각도 계산을 위한 도구
     int _categorize_values(double value, double value2, double value3, double value4);
@@ -36,6 +36,6 @@ namespace CalDegree {
     std::pair<double, double> _select_final_direction(const std::vector<double>& angles);
     
     //각도 계산
-    AudioResult getAudioAngle(const vector<double> &a, const vector<double> &b, const vector<double> &c, const vector<double> &d, int sample_rate);
+    AudioResult getAudioAngle(const vector<double> &a, const vector<double> &b, const vector<double> &c, const vector<double> &d);
 }
 #endif // CALDEGREE_HPP

@@ -18,16 +18,31 @@ set(PORTAUDIO_INCLUDE_DIR /usr/include)
 include_directories(${PORTAUDIO_INCLUDE_DIR})
 
 # # FFTW3 라이브러리 찾기
-# find_package(FFTW3 REQUIRED)
+# find_package(FFTW3 REQUIRED)\
+
+# PortAudio 라이브러리 경로 수동 설정
+set(PORTAUDIO_INCLUDE_DIR /usr/lib/python3/dist-packages/numpy/core/include)
+set(PORTAUDIO_LIBRARY /usr/lib/x86_64-linux-gnu/libportaudio.so)
+
+# PortAudio 경로 추가
+include_directories(${PORTAUDIO_INCLUDE_DIR})
+link_directories(${PORTAUDIO_LIBRARY})
+
 
 # 실행 파일 생성
-add_executable(caldegree_main Test_Degree.cpp ${SOURCES})
+# add_executable(caldegree_main Test_Degree.cpp ${SOURCES})
+add_executable(main main.cpp ${SOURCES})
+
 
 # 헤더 파일 포함 디렉토리
 include_directories(${PROJECT_SOURCE_DIR})
 
 # FFTW 라이브러리 연결
-target_link_libraries(caldegree_main PRIVATE fftw3)
+# target_link_libraries(caldegree_main PRIVATE fftw3)
+target_link_libraries(main PRIVATE fftw3)
+
+set(PORTAUDIO_LIBRARY /usr/lib/x86_64-linux-gnu/libportaudio.so)
+target_link_libraries(main PRIVATE ${PORTAUDIO_LIBRARY})
 
 # 빌드 타입 설정
 if(NOT CMAKE_BUILD_TYPE)

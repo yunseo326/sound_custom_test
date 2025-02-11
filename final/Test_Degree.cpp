@@ -33,7 +33,7 @@ int main() {
     int sample_rate = 44100; // 샘플링 레이트 설정
 
     // 방향 각도 계산 (process_audio 함수가 4개의 벡터와 sample_rate를 인자로 받음)
-    AudioResult result = getAudioAngle(mic1, mic2, mic3, mic4, sample_rate);
+    AudioResult result = getAudioAngle(mic1, mic2, mic3, mic4);
 
     // 결과 출력
     cout << "계산된 최종 방향: " << result.direction << " 도" << endl;

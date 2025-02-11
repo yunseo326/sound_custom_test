@@ -2,7 +2,7 @@
 #include <fftw3.h>
 
 namespace CalDegree {
-    void fft(CVector &signal, bool inverse) {
+    void _fft(CVector &signal, bool inverse) {
         int N = signal.size();
         fftw_plan plan;
     

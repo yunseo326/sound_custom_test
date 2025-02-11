@@ -4,7 +4,7 @@ using namespace std;
 using namespace CalDegree;
 
 namespace CalDegree {
-    AudioResult calculate_8_angles(double alpha,double beta,double gamma,double omega, int direction) {
+    AudioResult _calculate_8_angles(double alpha,double beta,double gamma,double omega, int direction) {
 
         double phi_alpha1;
         double phi_beta1;

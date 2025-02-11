@@ -4,7 +4,7 @@ using namespace CalDegree;
 
 namespace CalDegree {
     // GCC-PHAT 계산 함수
-    int gcc_phat(const vector<double> &x, const vector<double> &y, int sample_rate) {
+    int _gcc_phat(const vector<double> &x, const vector<double> &y) {
         int N = x.size();
 
         // 입력 신호를 복소수로 변환 (정상적인 FFT를 위해)
@@ -15,8 +15,8 @@ namespace CalDegree {
         }
 
         // FFT 수행
-        fft(X);
-        fft(Y);
+        _fft(X);
+        _fft(Y);
 
         // Cross Power Spectrum 계산 (PHAT 적용)
         CVector X_conj_Y(N);
@@ -25,7 +25,7 @@ namespace CalDegree {
         }
 
         // 역 FFT 수행하여 시간 도메인으로 변환
-        fft(X_conj_Y, true);
+        _fft(X_conj_Y, true);
 
         // 가장 큰 값을 찾음 (시간 지연)
         double max_corr = 0.0;
