@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named caldegree_probability
+
+# Build rule for target.
+caldegree_probability: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 caldegree_probability
+.PHONY : caldegree_probability
+
+# fast build rule for target.
+caldegree_probability/fast:
+	$(MAKE) -f CMakeFiles/caldegree_probability.dir/build.make CMakeFiles/caldegree_probability.dir/build
+.PHONY : caldegree_probability/fast
+
+#=============================================================================
 # Target rules for targets named gcc_phat
 
 # Build rule for target.
@@ -309,6 +322,33 @@ caldegree.cpp.s:
 	$(MAKE) -f CMakeFiles/caldegree.dir/build.make CMakeFiles/caldegree.dir/caldegree.cpp.s
 .PHONY : caldegree.cpp.s
 
+caldegree_probability.o: caldegree_probability.cpp.o
+
+.PHONY : caldegree_probability.o
+
+# target to build an object file
+caldegree_probability.cpp.o:
+	$(MAKE) -f CMakeFiles/caldegree_probability.dir/build.make CMakeFiles/caldegree_probability.dir/caldegree_probability.cpp.o
+.PHONY : caldegree_probability.cpp.o
+
+caldegree_probability.i: caldegree_probability.cpp.i
+
+.PHONY : caldegree_probability.i
+
+# target to preprocess a source file
+caldegree_probability.cpp.i:
+	$(MAKE) -f CMakeFiles/caldegree_probability.dir/build.make CMakeFiles/caldegree_probability.dir/caldegree_probability.cpp.i
+.PHONY : caldegree_probability.cpp.i
+
+caldegree_probability.s: caldegree_probability.cpp.s
+
+.PHONY : caldegree_probability.s
+
+# target to generate assembly for a file
+caldegree_probability.cpp.s:
+	$(MAKE) -f CMakeFiles/caldegree_probability.dir/build.make CMakeFiles/caldegree_probability.dir/caldegree_probability.cpp.s
+.PHONY : caldegree_probability.cpp.s
+
 plot_gcc_phat.o: plot_gcc_phat.cpp.o
 
 .PHONY : plot_gcc_phat.o
@@ -397,6 +437,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... caldegree_probability"
 	@echo "... gcc_phat"
 	@echo "... 4audio_not_graph_gcc_phat"
 	@echo "... audio_not_graph_gcc_phat"
@@ -417,6 +458,9 @@ help:
 	@echo "... caldegree.o"
 	@echo "... caldegree.i"
 	@echo "... caldegree.s"
+	@echo "... caldegree_probability.o"
+	@echo "... caldegree_probability.i"
+	@echo "... caldegree_probability.s"
 	@echo "... plot_gcc_phat.o"
 	@echo "... plot_gcc_phat.i"
 	@echo "... plot_gcc_phat.s"

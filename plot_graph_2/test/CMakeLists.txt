@@ -32,6 +32,7 @@ set(4audio_not_plot_gcc_phat 4audio_not_graph_gcc_phat.cpp)
 set(gcc_phat plot_gcc_phat.cpp)
 set(gcc_phat_test theory.cpp)
 set(caldegree caldegree.cpp)
+set(caldegree_probability caldegree_probability.cpp)
 
 # 실행 파일 생성
 add_executable(audio_graph ${plot_graph2})
@@ -40,7 +41,7 @@ add_executable(audio_not_graph_gcc_phat ${2audio_not_plot_gcc_phat})
 add_executable(4audio_not_graph_gcc_phat ${4audio_not_plot_gcc_phat})
 add_executable(gcc_phat ${gcc_phat})
 add_executable(gcc_phat_test ${gcc_phat_test})
-
+add_executable(caldegree_probability ${caldegree_probability})
 add_executable(caldegree ${caldegree})
 
 
@@ -49,6 +50,7 @@ target_link_libraries(audio_not_graph_gcc_phat PRIVATE fftw3)
 target_link_libraries(4audio_not_graph_gcc_phat PRIVATE fftw3)
 target_link_libraries(gcc_phat PRIVATE fftw3)
 target_link_libraries(gcc_phat_test PRIVATE fftw3)
+target_link_libraries(caldegree_probability PRIVATE fftw3)
 
 find_package(ALSA REQUIRED)
 target_link_libraries(audio_graph PRIVATE ${ALSA_LIBRARIES})

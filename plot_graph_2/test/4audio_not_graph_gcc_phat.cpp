@@ -57,77 +57,76 @@ const double SPEED_SOUND = 343.0;
 
 AudioResult calculate_8_angles(double alpha,double beta,double gamma,double omega, int direction,double frame1,double frame2,double frame3,double frame4);
 int categorize_values(double value, double value2, double value3, double value4);
-
+AudioResult detection(double angle1_1,double angle1_2,double angle2_1,double angle2_2,double angle3_1,double angle3_2,double angle4_1,double angle4_2);
 // 마이크 간 시간 차이 및 최종 방향 계산
 AudioResult process_audio(double frame1,double frame2,double frame3,double frame4) {
-    
+    cout << frame1 << " " << frame2 << " " << frame3 << " " << frame4 << endl;
     AudioResult cal_result;
 
     double time_delay_1 = frame1 / SAMPLE_RATE;
     double time_delay_2 = frame2 / SAMPLE_RATE;
     double time_delay_3 = frame3 / SAMPLE_RATE;
     double time_delay_4 = frame4 / SAMPLE_RATE;
+    cout << time_delay_1 << " " << time_delay_2 << " " << time_delay_3 << " " << time_delay_4 << endl;
+    
     
     double alpha = std::acos((SPEED_SOUND * time_delay_1) / DISTANCE_MIC) * 180.0 / M_PI;
     double beta  = std::acos((SPEED_SOUND * time_delay_2) / DISTANCE_MIC) * 180.0 / M_PI;
     double gamma = std::acos((SPEED_SOUND * time_delay_3) / DISTANCE_MIC) * 180.0 / M_PI;
     double omega = std::acos((SPEED_SOUND * time_delay_4) / DISTANCE_MIC) * 180.0 / M_PI;
     
+    cout << alpha << " " << beta << " " << gamma << " " << omega << endl;
     int direction = categorize_values(frame1,frame2,frame3,frame4);
-    cal_result = calculate_8_angles(alpha,beta,gamma,omega,direction,frame1,frame2,frame3,frame4);
-    cal_result.direction = direction;
+    cal_result = calculate_8_angles(alpha,beta,gamma,omega,direction,frame1,frame2,frame3,frame4);    cal_result.direction = direction;
     return cal_result;
 }
 
-AudioResult detection(double angle1_1,double angle1_2,double angle2_1,double angle2_2,double angle3_1,double angle3_2,double angle4_1,double angle4_2);
+
 #include <algorithm>
 // 마이크 간 시간 차이 및 최종 방향 계산
 AudioResult detection(double angle1_1,double angle1_2,double angle2_1,double angle2_2,double angle3_1,double angle3_2,double angle4_1,double angle4_2) {
     
     AudioResult detection_result;
-    min_difference = std::numeric_limits<double>::infinity();
-    std::vector<double> angle_case_1 = {angle1_1, angle2_1, angle3_1, angle4_1};
-    std::vector<double> angle_case_2 = {angle1_2, angle2_2, angle3_2, angle4_2};
+    vector<double> angle_case_1 = {angle1_1, angle2_1, angle3_1, angle4_1};
+    vector<double> angle_case_2 = {angle1_2, angle2_2, angle3_2, angle4_2};
     double difference1 = 0;
     double difference2 = 0;
-    std::vector<double> pair_1 = {0,0,0}
-    std::vector<double> pair_2 = {0,0,0}
+    vector<double> pair_1 = {0,0,0};
+    vector<double> pair_2 = {0,0,0};
 
-    std::vector<double> compare1 = {0,0,0}
-    std::vector<double> compare2 = {0,0,0}
+    vector<double> compare1 = {0,0,0};
+    vector<double> compare2 = {0,0,0};
 
 
     for (size_t i = 0; i < 4; i++) {
         for (size_t j = 0; j < 3; j++) {
-            if (i == j ) {
-                pass;
-            }
-            difference1 = std::abs(angle_case_1[i] - angle_case_1[j]);
-            difference2 = std::abs(angle_case_1[i] - angle_case_2[j]);
-            
-            if (difference1 <= difference2) {
-                pair_1[j] = {difference1};
-            }
-            else{
-                pair_1[j] = {difference2};
-            }
-
-            for (size_t j = 0; j < 3; j++) {
-                if (i == j ) {
-                    pass;
+            if (i != j ) {
+                difference1 = abs(angle_case_1[i] - angle_case_1[j]);
+                difference2 = abs(angle_case_1[i] - angle_case_2[j]);
+                
+                if (difference1 <= difference2) {
+                    pair_1[j] = {difference1};
                 }
-                difference1 = std::abs(angle_case_2[i] - angle_case_1[j]);
-                difference2 = std::abs(angle_case_2[i] - angle_case_2[j]);
-            }
-            if (difference1 <= difference2) {
-                pair_2[j] = {difference1};
-            }
-            else{
-                pair_2[j] = {difference2};
+                else{
+                    pair_1[j] = {difference2};
+                }
             }
         }
-        std::sort(pair_1.begin(), pair_1.end());
-        std::sort(pair_2.begin(), pair_2.end());
+
+        for (size_t j = 0; j < 3; j++) {
+            if (i != j ) {
+                difference1 = abs(angle_case_2[i] - angle_case_1[j]);
+                difference2 = abs(angle_case_2[i] - angle_case_2[j]);
+                if (difference1 <= difference2) {
+                    pair_2[j] = {difference1};
+                }
+                else{
+                    pair_2[j] = {difference2};
+                }
+            }
+        }
+        sort(pair_1.begin(), pair_1.end());
+        sort(pair_2.begin(), pair_2.end());
 
         if (pair_1[0] + pair_1[1] > pair_2[0] + pair_2[1]){
             detection_result.angle_1 = angle_case_1[i];
@@ -142,8 +141,7 @@ AudioResult detection(double angle1_1,double angle1_2,double angle2_1,double ang
 }
 
 
-
-// 4분면 정하기
+// 4분면 정하기// 4분면 정하기
 int categorize_values(double value, double value2, double value3, double value4) {
     if (value >= 0 && value3 <= 0) {
         if (value2 >= 0 && value4 <= 0){
@@ -171,6 +169,7 @@ int categorize_values(double value, double value2, double value3, double value4)
     // Default return value to prevent control from reaching end of non-void function
     return 0;
 }
+
 
 
 // 초기 각도로부터 8개의 방향 각도 계산
@@ -245,9 +244,7 @@ AudioResult calculate_8_angles(double alpha,double beta,double gamma,double omeg
                break;
     }
     return result;
-  
 }
-
 // 6개의 각도 중 가장 적은 오차를 보이는 두 각도를 선택하여 평균 계산
 std::pair<double, double> select_final_direction(const std::vector<double>& angles) {
     double min_difference = std::numeric_limits<double>::infinity();
