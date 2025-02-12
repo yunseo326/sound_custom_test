@@ -163,6 +163,19 @@ caldegree/fast:
 .PHONY : caldegree/fast
 
 #=============================================================================
+# Target rules for targets named gcc_phat_test
+
+# Build rule for target.
+gcc_phat_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gcc_phat_test
+.PHONY : gcc_phat_test
+
+# fast build rule for target.
+gcc_phat_test/fast:
+	$(MAKE) -f CMakeFiles/gcc_phat_test.dir/build.make CMakeFiles/gcc_phat_test.dir/build
+.PHONY : gcc_phat_test/fast
+
+#=============================================================================
 # Target rules for targets named audio_not_graph
 
 # Build rule for target.
@@ -350,6 +363,33 @@ plot_graph_2.cpp.s:
 	$(MAKE) -f CMakeFiles/audio_graph.dir/build.make CMakeFiles/audio_graph.dir/plot_graph_2.cpp.s
 .PHONY : plot_graph_2.cpp.s
 
+theory.o: theory.cpp.o
+
+.PHONY : theory.o
+
+# target to build an object file
+theory.cpp.o:
+	$(MAKE) -f CMakeFiles/gcc_phat_test.dir/build.make CMakeFiles/gcc_phat_test.dir/theory.cpp.o
+.PHONY : theory.cpp.o
+
+theory.i: theory.cpp.i
+
+.PHONY : theory.i
+
+# target to preprocess a source file
+theory.cpp.i:
+	$(MAKE) -f CMakeFiles/gcc_phat_test.dir/build.make CMakeFiles/gcc_phat_test.dir/theory.cpp.i
+.PHONY : theory.cpp.i
+
+theory.s: theory.cpp.s
+
+.PHONY : theory.s
+
+# target to generate assembly for a file
+theory.cpp.s:
+	$(MAKE) -f CMakeFiles/gcc_phat_test.dir/build.make CMakeFiles/gcc_phat_test.dir/theory.cpp.s
+.PHONY : theory.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -361,6 +401,7 @@ help:
 	@echo "... 4audio_not_graph_gcc_phat"
 	@echo "... audio_not_graph_gcc_phat"
 	@echo "... caldegree"
+	@echo "... gcc_phat_test"
 	@echo "... audio_not_graph"
 	@echo "... edit_cache"
 	@echo "... audio_graph"
@@ -382,6 +423,9 @@ help:
 	@echo "... plot_graph_2.o"
 	@echo "... plot_graph_2.i"
 	@echo "... plot_graph_2.s"
+	@echo "... theory.o"
+	@echo "... theory.i"
+	@echo "... theory.s"
 .PHONY : help
 
 

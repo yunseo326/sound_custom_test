@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yunseo/sound_custom_test/plot_graph_2/test/theory.cpp
+iostream
+-
+cmath
+-
+vector
+-
+random
+-
+algorithm
+-
+iostream
+-
+vector
+-
+complex
+-
+fftw3.h
+-
+

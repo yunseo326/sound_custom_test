@@ -43,6 +43,10 @@ complex
 -
 fftw3.h
 -
+thread
+-
+chrono
+-
 portaudio.h
 -
 matplotlibcpp.h

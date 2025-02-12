@@ -2,6 +2,9 @@
 #include <vector>
 #include <complex>
 #include <fftw3.h>
+
+#include <thread>
+#include <chrono>
 using namespace std;
 
 // FFTW에서 사용하는 복소수 타입을 정의
@@ -15,7 +18,7 @@ namespace plt = matplotlibcpp;
 
 // 샘플레이트와 버퍼 크기
 #define SAMPLE_RATE 44100
-#define FRAMES_PER_BUFFER 44100
+#define FRAMES_PER_BUFFER 22050
 #define THRESHOLD 0.05
 #define DEVICE_ID1 6
 #define DEVICE_ID2 7
@@ -70,32 +73,42 @@ AudioResult process_audio(double frame1,double frame2,double frame3,double frame
     double gamma = std::acos((SPEED_SOUND * time_delay_3) / DISTANCE_MIC) * 180.0 / M_PI;
     double omega = std::acos((SPEED_SOUND * time_delay_4) / DISTANCE_MIC) * 180.0 / M_PI;
     
-    int direction = categorize_values(alpha,beta,gamma,omega);
+    int direction = categorize_values(frame1,frame2,frame3,frame4);
     cal_result = calculate_8_angles(alpha,beta,gamma,omega,direction);
     cal_result.direction = direction;
     return cal_result;
 }
 
 // 4분면 정하기
+// 4분면 정하기
 int categorize_values(double value, double value2, double value3, double value4) {
-    if (value < 90 && value3 > 90) {
-        if (value2 < 90 && value4 >= 90)
+    if (value >= 0 && value3 <= 0) {
+        if (value2 >= 0 && value4 <= 0){
             return 1;
-        else if (value >= 90 && value3 < 90){
+        } 
+        else if (value2 <= 0 && value4 >= 0){
             return 2;
-        }
-        else 
+        } 
+        else {
             return 0;
-    } else {
-        if (value2 < 90 && value4 > 90)
+        }
+    } 
+    else if (value <= 0 && value3 >= 0) {
+        if (value2 >= 0 && value4 <= 0) {
             return 4;
-        else if (value2 >= 90 && value3 < 90){
+        } 
+        else if (value2 <= 0 && value3 >= 0){
             return 3;
-        }
-        else
+        } 
+        else {
             return 0;
+        }
     }
+
+    // Default return value to prevent control from reaching end of non-void function
+    return 0;
 }
+
 
 // 초기 각도로부터 8개의 방향 각도 계산
 AudioResult calculate_8_angles(double alpha,double beta,double gamma,double omega, int direction) {
@@ -363,8 +376,7 @@ int main() {
         return -1;
     }
 
-    // 그래프 초기화
-    plt::ion();  // 인터랙티브 모드 활성화
+
 
     // 스트림 시작 (마이크 1, 마이크 2, 마이크 3, 마이크 4)
     err = Pa_StartStream(stream1);
@@ -391,11 +403,24 @@ int main() {
         return -1;
     }
 
+
+    //debugging
+    std::cout << "첫 번째 마이크: " << inputParameters1.suggestedLatency << std::endl;
+    std::cout << "첫 번째 마이크: " << inputParameters2.suggestedLatency << std::endl;
+    std::cout << "첫 번째 마이크: " << inputParameters3.suggestedLatency << std::endl;
+    std::cout << "첫 번째 마이크: " << inputParameters4.suggestedLatency << std::endl;
+    //
+
     std::cout << "오디오 입력을 시작합니다. 종료하려면 Ctrl+C를 누르세요..." << std::endl;
 
+    // 그래프 초기화
+    // plt::ion();  // 인터랙티브 모드 활성화
+    
     // 실시간으로 오디오 데이터를 처리하고 그래프를 그리는 루프
     while (true) {
         // 네 개의 입력 데이터에 대해 실시간 그래프 갱신
+        
+        /*
         plt::clf();  // 그래프 초기화
 
         // 첫 번째 마이크의 오디오 데이터를 그래프에 그리기
@@ -429,6 +454,7 @@ int main() {
         
         plt::xlim(0, FRAMES_PER_BUFFER);   // x축 범위 설정
         plt::ylim(-0.5, 0.5);              // y축 범위 설정
+        */
 
         // Find the index of the maximum value in all inputData arrays
         float* maxPtr1 = std::max_element(inputData1, inputData1+FRAMES_PER_BUFFER);
@@ -436,10 +462,10 @@ int main() {
         float* maxPtr3 = std::max_element(inputData3, inputData3+FRAMES_PER_BUFFER);
         float* maxPtr4 = std::max_element(inputData4, inputData4+FRAMES_PER_BUFFER);
         
-	std::copy(std::begin(inputData1), std::end(inputData1), std::begin(savedata1));
-	std::copy(std::begin(inputData2), std::end(inputData2), std::begin(savedata2));
-	std::copy(std::begin(inputData3), std::end(inputData3), std::begin(savedata3));
-	std::copy(std::begin(inputData4), std::end(inputData4), std::begin(savedata4));
+        std::copy(std::begin(inputData1), std::end(inputData1), std::begin(savedata1));
+        std::copy(std::begin(inputData2), std::end(inputData2), std::begin(savedata2));
+        std::copy(std::begin(inputData3), std::end(inputData3), std::begin(savedata3));
+        std::copy(std::begin(inputData4), std::end(inputData4), std::begin(savedata4));
 
 
         
@@ -450,11 +476,11 @@ int main() {
             int maxIndex4 = std::distance(savedata4, maxPtr4);
 
             // Print the index of the max values
-            std::cout << "Max Value 1:   " << *maxPtr1 << "  index  "<< maxIndex1 <<std::endl;
-            std::cout << "Max Value 2:   " << *maxPtr2 << "  index  "<< maxIndex2 <<std::endl;
-            std::cout << "Max Value 3:   " << *maxPtr3 << "  index  "<< maxIndex3 <<std::endl;
-            std::cout << "Max Value 4:   " << *maxPtr4 << "  index  "<< maxIndex4 <<std::endl;
-
+            std::cout << "Max Value 1:   " << *maxPtr1 << "  index  "<< maxIndex1 - maxIndex2 <<std::endl;
+            std::cout << "Max Value 2:   " << *maxPtr2 << "  index  "<< maxIndex2 - maxIndex3 <<std::endl;
+            std::cout << "Max Value 3:   " << *maxPtr3 << "  index  "<< maxIndex3 - maxIndex4 <<std::endl;
+            std::cout << "Max Value 4:   " << *maxPtr4 << "  index  "<< maxIndex4 - maxIndex1 <<std::endl;
+            
             
             std::vector<double> vecinput1(savedata1, savedata1 + FRAMES_PER_BUFFER);
             std::vector<double> vecinput2(savedata2, savedata2 + FRAMES_PER_BUFFER);
@@ -467,21 +493,26 @@ int main() {
             int delay34 = gcc_phat(vecinput3, vecinput4, SAMPLE_RATE);
             int delay41 = gcc_phat(vecinput4, vecinput1, SAMPLE_RATE);
 
-	     AudioResult print_result;
-             print_result = process_audio(delay12, delay23, delay34, delay41);
+	        AudioResult print_result;
+            print_result = process_audio(delay12, delay23, delay34, delay41);
+             
+    	    cout << "Estimated delay between mic 1 and mic 2: " << delay12  << endl;
+    	    cout << "Estimated delay between mic 2 and mic 3: " << delay23  << endl;
+    	    cout << "Estimated delay between mic 3 and mic 4: " << delay34  << endl;
+    	    cout << "Estimated delay between mic 4 and mic 1: " << delay41  << endl;
 
-            
 	    if (print_result.direction != 0){
             // 지연 결과 출력
             	cout << "direction " << print_result.direction << " samples" << endl;
-            	cout << "Estimated delay between mic 1 and mic 2: " << print_result.angle_1 << " samples" << endl;
-            	cout << "Estimated delay between mic 2 and mic 3: " << print_result.angle_2 << " samples" << endl;
-            	cout << "Estimated delay between mic 3 and mic 4: " << print_result.angle_3 << " samples" << endl;
-            	cout << "Estimated delay between mic 4 and mic 1: " << print_result.angle_4 << " samples" << endl;
-            }
+            	}
+    	    cout << "Estimated angle between mic 1 and mic 2: " << print_result.angle_1 << " degree" << endl;
+    	    cout << "Estimated angle between mic 2 and mic 3: " << print_result.angle_2 << " degree" << endl;
+    	    cout << "Estimated angle between mic 3 and mic 4: " << print_result.angle_3 << " degree" << endl;
+    	    cout << "Estimated angle between mic 4 and mic 1: " << print_result.angle_4 << " degree" << endl;
+            
         }
-        
-        plt::pause(0.01);  // 잠시 대기 (그래프 갱신을 위한 시간 조정)
+        // std::this_thread::sleep_for(std::chrono::milliseconds(1));  // 1ms 대기
+        // plt::pause(0.01);  // 잠시 대기 (그래프 갱신을 위한 시간 조정)
     }
 
     // 스트림 종료
