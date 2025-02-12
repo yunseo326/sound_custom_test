@@ -65,8 +65,9 @@ CMAKE_BINARY_DIR = /home/leemuwon/test/sound_custom_test/plot_graph_2/test/build
 # The main recursive "all" target.
 all: CMakeFiles/audio_graph.dir/all
 all: CMakeFiles/audio_not_graph.dir/all
-all: CMakeFiles/audio_not_graph_gcc_phat.dir/all
+all: CMakeFiles/audio_gcc_phat.dir/all
 all: CMakeFiles/gcc_phat.dir/all
+all: CMakeFiles/caldegree.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -76,8 +77,9 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/audio_graph.dir/clean
 clean: CMakeFiles/audio_not_graph.dir/clean
-clean: CMakeFiles/audio_not_graph_gcc_phat.dir/clean
+clean: CMakeFiles/audio_gcc_phat.dir/clean
 clean: CMakeFiles/gcc_phat.dir/clean
+clean: CMakeFiles/caldegree.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -87,7 +89,7 @@ clean: CMakeFiles/gcc_phat.dir/clean
 CMakeFiles/audio_graph.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio_graph.dir/build.make CMakeFiles/audio_graph.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio_graph.dir/build.make CMakeFiles/audio_graph.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/leemuwon/test/sound_custom_test/plot_graph_2/test/build/CMakeFiles --progress-num=1,2 "Built target audio_graph"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/leemuwon/test/sound_custom_test/plot_graph_2/test/build/CMakeFiles --progress-num=3,4 "Built target audio_graph"
 .PHONY : CMakeFiles/audio_graph.dir/all
 
 # Build rule for subdir invocation for target.
@@ -113,7 +115,7 @@ CMakeFiles/audio_graph.dir/clean:
 CMakeFiles/audio_not_graph.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio_not_graph.dir/build.make CMakeFiles/audio_not_graph.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio_not_graph.dir/build.make CMakeFiles/audio_not_graph.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/leemuwon/test/sound_custom_test/plot_graph_2/test/build/CMakeFiles --progress-num=3,4 "Built target audio_not_graph"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/leemuwon/test/sound_custom_test/plot_graph_2/test/build/CMakeFiles --progress-num=5,6 "Built target audio_not_graph"
 .PHONY : CMakeFiles/audio_not_graph.dir/all
 
 # Build rule for subdir invocation for target.
@@ -133,30 +135,30 @@ CMakeFiles/audio_not_graph.dir/clean:
 .PHONY : CMakeFiles/audio_not_graph.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/audio_not_graph_gcc_phat.dir
+# Target rules for target CMakeFiles/audio_gcc_phat.dir
 
 # All Build rule for target.
-CMakeFiles/audio_not_graph_gcc_phat.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio_not_graph_gcc_phat.dir/build.make CMakeFiles/audio_not_graph_gcc_phat.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio_not_graph_gcc_phat.dir/build.make CMakeFiles/audio_not_graph_gcc_phat.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/leemuwon/test/sound_custom_test/plot_graph_2/test/build/CMakeFiles --progress-num=5,6 "Built target audio_not_graph_gcc_phat"
-.PHONY : CMakeFiles/audio_not_graph_gcc_phat.dir/all
+CMakeFiles/audio_gcc_phat.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio_gcc_phat.dir/build.make CMakeFiles/audio_gcc_phat.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio_gcc_phat.dir/build.make CMakeFiles/audio_gcc_phat.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/leemuwon/test/sound_custom_test/plot_graph_2/test/build/CMakeFiles --progress-num=1,2 "Built target audio_gcc_phat"
+.PHONY : CMakeFiles/audio_gcc_phat.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/audio_not_graph_gcc_phat.dir/rule: cmake_check_build_system
+CMakeFiles/audio_gcc_phat.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leemuwon/test/sound_custom_test/plot_graph_2/test/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/audio_not_graph_gcc_phat.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/audio_gcc_phat.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/leemuwon/test/sound_custom_test/plot_graph_2/test/build/CMakeFiles 0
-.PHONY : CMakeFiles/audio_not_graph_gcc_phat.dir/rule
+.PHONY : CMakeFiles/audio_gcc_phat.dir/rule
 
 # Convenience name for target.
-audio_not_graph_gcc_phat: CMakeFiles/audio_not_graph_gcc_phat.dir/rule
-.PHONY : audio_not_graph_gcc_phat
+audio_gcc_phat: CMakeFiles/audio_gcc_phat.dir/rule
+.PHONY : audio_gcc_phat
 
 # clean rule for target.
-CMakeFiles/audio_not_graph_gcc_phat.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio_not_graph_gcc_phat.dir/build.make CMakeFiles/audio_not_graph_gcc_phat.dir/clean
-.PHONY : CMakeFiles/audio_not_graph_gcc_phat.dir/clean
+CMakeFiles/audio_gcc_phat.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio_gcc_phat.dir/build.make CMakeFiles/audio_gcc_phat.dir/clean
+.PHONY : CMakeFiles/audio_gcc_phat.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/gcc_phat.dir
@@ -165,7 +167,7 @@ CMakeFiles/audio_not_graph_gcc_phat.dir/clean:
 CMakeFiles/gcc_phat.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gcc_phat.dir/build.make CMakeFiles/gcc_phat.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gcc_phat.dir/build.make CMakeFiles/gcc_phat.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/leemuwon/test/sound_custom_test/plot_graph_2/test/build/CMakeFiles --progress-num=7,8 "Built target gcc_phat"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/leemuwon/test/sound_custom_test/plot_graph_2/test/build/CMakeFiles --progress-num=9,10 "Built target gcc_phat"
 .PHONY : CMakeFiles/gcc_phat.dir/all
 
 # Build rule for subdir invocation for target.
@@ -183,6 +185,32 @@ gcc_phat: CMakeFiles/gcc_phat.dir/rule
 CMakeFiles/gcc_phat.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gcc_phat.dir/build.make CMakeFiles/gcc_phat.dir/clean
 .PHONY : CMakeFiles/gcc_phat.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/caldegree.dir
+
+# All Build rule for target.
+CMakeFiles/caldegree.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree.dir/build.make CMakeFiles/caldegree.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree.dir/build.make CMakeFiles/caldegree.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/leemuwon/test/sound_custom_test/plot_graph_2/test/build/CMakeFiles --progress-num=7,8 "Built target caldegree"
+.PHONY : CMakeFiles/caldegree.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/caldegree.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/leemuwon/test/sound_custom_test/plot_graph_2/test/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/caldegree.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/leemuwon/test/sound_custom_test/plot_graph_2/test/build/CMakeFiles 0
+.PHONY : CMakeFiles/caldegree.dir/rule
+
+# Convenience name for target.
+caldegree: CMakeFiles/caldegree.dir/rule
+.PHONY : caldegree
+
+# clean rule for target.
+CMakeFiles/caldegree.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree.dir/build.make CMakeFiles/caldegree.dir/clean
+.PHONY : CMakeFiles/caldegree.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

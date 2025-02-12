@@ -143,17 +143,17 @@ audio_not_graph/fast:
 .PHONY : audio_not_graph/fast
 
 #=============================================================================
-# Target rules for targets named audio_not_graph_gcc_phat
+# Target rules for targets named audio_gcc_phat
 
 # Build rule for target.
-audio_not_graph_gcc_phat: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 audio_not_graph_gcc_phat
-.PHONY : audio_not_graph_gcc_phat
+audio_gcc_phat: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 audio_gcc_phat
+.PHONY : audio_gcc_phat
 
 # fast build rule for target.
-audio_not_graph_gcc_phat/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio_not_graph_gcc_phat.dir/build.make CMakeFiles/audio_not_graph_gcc_phat.dir/build
-.PHONY : audio_not_graph_gcc_phat/fast
+audio_gcc_phat/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio_gcc_phat.dir/build.make CMakeFiles/audio_gcc_phat.dir/build
+.PHONY : audio_gcc_phat/fast
 
 #=============================================================================
 # Target rules for targets named gcc_phat
@@ -167,6 +167,19 @@ gcc_phat: cmake_check_build_system
 gcc_phat/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gcc_phat.dir/build.make CMakeFiles/gcc_phat.dir/build
 .PHONY : gcc_phat/fast
+
+#=============================================================================
+# Target rules for targets named caldegree
+
+# Build rule for target.
+caldegree: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 caldegree
+.PHONY : caldegree
+
+# fast build rule for target.
+caldegree/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree.dir/build.make CMakeFiles/caldegree.dir/build
+.PHONY : caldegree/fast
 
 2audio_not_graph.o: 2audio_not_graph.cpp.o
 .PHONY : 2audio_not_graph.o
@@ -197,7 +210,7 @@ gcc_phat/fast:
 
 # target to build an object file
 2audio_not_graph_gcc_phat.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio_not_graph_gcc_phat.dir/build.make CMakeFiles/audio_not_graph_gcc_phat.dir/2audio_not_graph_gcc_phat.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio_gcc_phat.dir/build.make CMakeFiles/audio_gcc_phat.dir/2audio_not_graph_gcc_phat.cpp.o
 .PHONY : 2audio_not_graph_gcc_phat.cpp.o
 
 2audio_not_graph_gcc_phat.i: 2audio_not_graph_gcc_phat.cpp.i
@@ -205,7 +218,7 @@ gcc_phat/fast:
 
 # target to preprocess a source file
 2audio_not_graph_gcc_phat.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio_not_graph_gcc_phat.dir/build.make CMakeFiles/audio_not_graph_gcc_phat.dir/2audio_not_graph_gcc_phat.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio_gcc_phat.dir/build.make CMakeFiles/audio_gcc_phat.dir/2audio_not_graph_gcc_phat.cpp.i
 .PHONY : 2audio_not_graph_gcc_phat.cpp.i
 
 2audio_not_graph_gcc_phat.s: 2audio_not_graph_gcc_phat.cpp.s
@@ -213,8 +226,32 @@ gcc_phat/fast:
 
 # target to generate assembly for a file
 2audio_not_graph_gcc_phat.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio_not_graph_gcc_phat.dir/build.make CMakeFiles/audio_not_graph_gcc_phat.dir/2audio_not_graph_gcc_phat.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio_gcc_phat.dir/build.make CMakeFiles/audio_gcc_phat.dir/2audio_not_graph_gcc_phat.cpp.s
 .PHONY : 2audio_not_graph_gcc_phat.cpp.s
+
+caldegree.o: caldegree.cpp.o
+.PHONY : caldegree.o
+
+# target to build an object file
+caldegree.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree.dir/build.make CMakeFiles/caldegree.dir/caldegree.cpp.o
+.PHONY : caldegree.cpp.o
+
+caldegree.i: caldegree.cpp.i
+.PHONY : caldegree.i
+
+# target to preprocess a source file
+caldegree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree.dir/build.make CMakeFiles/caldegree.dir/caldegree.cpp.i
+.PHONY : caldegree.cpp.i
+
+caldegree.s: caldegree.cpp.s
+.PHONY : caldegree.s
+
+# target to generate assembly for a file
+caldegree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree.dir/build.make CMakeFiles/caldegree.dir/caldegree.cpp.s
+.PHONY : caldegree.cpp.s
 
 plot_gcc_phat.o: plot_gcc_phat.cpp.o
 .PHONY : plot_gcc_phat.o
@@ -272,9 +309,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... audio_gcc_phat"
 	@echo "... audio_graph"
 	@echo "... audio_not_graph"
-	@echo "... audio_not_graph_gcc_phat"
+	@echo "... caldegree"
 	@echo "... gcc_phat"
 	@echo "... 2audio_not_graph.o"
 	@echo "... 2audio_not_graph.i"
@@ -282,6 +320,9 @@ help:
 	@echo "... 2audio_not_graph_gcc_phat.o"
 	@echo "... 2audio_not_graph_gcc_phat.i"
 	@echo "... 2audio_not_graph_gcc_phat.s"
+	@echo "... caldegree.o"
+	@echo "... caldegree.i"
+	@echo "... caldegree.s"
 	@echo "... plot_gcc_phat.o"
 	@echo "... plot_gcc_phat.i"
 	@echo "... plot_gcc_phat.s"
