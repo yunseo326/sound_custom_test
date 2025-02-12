@@ -1,4 +1,4 @@
-#include "CalDegree.hpp"
+#include "../include/CalDegree.hpp"
 
 using namespace std;
 using namespace CalDegree;

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <random>
-#include "src/CalDegree.hpp"
+#include "include/CalDegree.hpp"
 
 using namespace std;
 using namespace CalDegree;
@@ -26,9 +26,9 @@ int main() {
     // 각 벡터의 중간(인덱스 50)에 100으로 튀는 값을 삽입
     int mid = SIZE / 2;  // 100개의 경우 mid는 50 (0~99에서 50번째 요소)
     mic1[20] = 100.0;
-    mic2[40] = 100.0;
-    mic3[40] = 100.0;
-    mic4[30] = 100.0;
+    mic2[46] = 100.0;
+    mic3[46] = 100.0;
+    mic4[71] = 100.0;
 
     int sample_rate = 44100; // 샘플링 레이트 설정
 
@@ -36,11 +36,12 @@ int main() {
     AudioResult result = getAudioAngle(mic1, mic2, mic3, mic4);
 
     // 결과 출력
-    cout << "계산된 최종 방향: " << result.direction << " 도" << endl;
+    cout << "계산된 최종 방향: " << result.direction << endl;
     cout << "Angle 1: " << result.angle_1 << " 도" << endl;
     cout << "Angle 2: " << result.angle_2 << " 도" << endl;
     cout << "Angle 3: " << result.angle_3 << " 도" << endl;
     cout << "Angle 4: " << result.angle_4 << " 도" << endl;
+    cout << "최종 방향: " << (result.angle_1 + result.angle_2 + result.angle_3 + result.angle_4) / 4 << " 도" << endl;
 
     return 0;
 }

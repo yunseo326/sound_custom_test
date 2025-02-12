@@ -24,11 +24,9 @@ namespace CalDegree {
 
     const double DISTANCE_MIC = 0.4; // 마이크 간 거리
     const double SPEED_SOUND = 343.0;
-    const int SAMPLE_RATE = 44100;
-    
     // 마이크 간 시간 차이 계산
     void _fft(CVector &signal, bool inverse = false);
-    int _gcc_phat(const vector<double> &x, const vector<double> &y);
+    double _gcc_phat(const vector<double> &x, const vector<double> &y);
     
     // 각도 계산을 위한 도구
     int _categorize_values(double value, double value2, double value3, double value4);

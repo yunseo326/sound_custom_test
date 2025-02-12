@@ -1,4 +1,4 @@
-#include "CalDegree.hpp"
+#include "../include/CalDegree.hpp"
 
 namespace CalDegree {
     // 6개의 각도 중 가장 적은 오차를 보이는 두 각도를 선택하여 평균 계산

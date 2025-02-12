@@ -6,12 +6,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # 소스 파일 목록
 set(SOURCES
-    src/D_calculate_8_angles.cpp
-    src/D_categorize_values.cpp
-    src/fft.cpp
-    src/gcc_phat.cpp
-    src/D_select_final_direction.cpp
-    src/D_process_audio.cpp
+    src/_calculate_8_angles.cpp
+    src/_categorize_values.cpp
+    src/_fft.cpp
+    src/_gcc_phat.cpp
+    src/_select_final_direction.cpp
+    src/_process_audio.cpp
+    # src/Audio.cpp
 )
 
 set(PORTAUDIO_INCLUDE_DIR /usr/include)
@@ -30,19 +31,23 @@ link_directories(${PORTAUDIO_LIBRARY})
 
 
 # 실행 파일 생성
-# add_executable(caldegree_main Test_Degree.cpp ${SOURCES})
+add_executable(caldegree_main Test_Degree.cpp ${SOURCES})
 add_executable(main main.cpp ${SOURCES})
+# add_executable(audio_main Test_audio.cpp ${SOURCES})
 
 
 # 헤더 파일 포함 디렉토리
 include_directories(${PROJECT_SOURCE_DIR})
 
 # FFTW 라이브러리 연결
-# target_link_libraries(caldegree_main PRIVATE fftw3)
+target_link_libraries(caldegree_main PRIVATE fftw3)
 target_link_libraries(main PRIVATE fftw3)
+
 
 set(PORTAUDIO_LIBRARY /usr/lib/x86_64-linux-gnu/libportaudio.so)
 target_link_libraries(main PRIVATE ${PORTAUDIO_LIBRARY})
+# target_link_libraries(audio_main PRIVATE ${PORTAUDIO_LIBRARY})
+
 
 # 빌드 타입 설정
 if(NOT CMAKE_BUILD_TYPE)

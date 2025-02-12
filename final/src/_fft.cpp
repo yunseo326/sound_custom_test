@@ -1,4 +1,4 @@
-#include "CalDegree.hpp"
+#include "../include/CalDegree.hpp"
 #include <fftw3.h>
 
 namespace CalDegree {

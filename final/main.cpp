@@ -1,4 +1,4 @@
-#include "src/CalDegree.hpp"
+#include "include/CalDegree.hpp"
 #include <iostream>
 #include <algorithm>
 #include <portaudio.h>
@@ -8,11 +8,11 @@
 using namespace CalDegree;
 #define SAMPLE_RATE 44100
 #define FRAMES_PER_BUFFER 44100
-#define THRESHOLD 0.05
-#define DEVICE_ID1 5
-#define DEVICE_ID2 6
-#define DEVICE_ID3 7
-#define DEVICE_ID4 8
+#define THRESHOLD 0.3
+#define DEVICE_ID1 0
+#define DEVICE_ID2 1
+#define DEVICE_ID3 2
+#define DEVICE_ID4 3
 
 float inputData1[FRAMES_PER_BUFFER];
 float inputData2[FRAMES_PER_BUFFER];
@@ -44,27 +44,27 @@ static int audioCallback2(const void *inputBuffer, void *outputBuffer,
     const PaStreamCallbackTimeInfo *timeInfo,
     PaStreamCallbackFlags statusFlags,
     void *userData) {
-float *inBuffer = (float *)inputBuffer;
+        float *inBuffer = (float *)inputBuffer;
 
-// 두 번째 입력 (마이크 2)
-for (unsigned long i = 0; i < framesPerBuffer; ++i) {
-inputData2[i] = inBuffer[i];  // 두 번째 채널
-}
+        // 두 번째 입력 (마이크 2)
+        for (unsigned long i = 0; i < framesPerBuffer; ++i) {
+        inputData2[i] = inBuffer[i];  // 두 번째 채널
+        }
 
-return paContinue;
-}
+        return paContinue;
+    }
 
 static int audioCallback3(const void *inputBuffer, void *outputBuffer,
     unsigned long framesPerBuffer,
     const PaStreamCallbackTimeInfo *timeInfo,
     PaStreamCallbackFlags statusFlags,
     void *userData) {
-float *inBuffer = (float *)inputBuffer;
+        float *inBuffer = (float *)inputBuffer;
 
-// 세 번째 입력 (마이크 3)
-for (unsigned long i = 0; i < framesPerBuffer; ++i) {
-inputData3[i] = inBuffer[i];  // 세 번째 채널
-}
+        // 세 번째 입력 (마이크 3)
+        for (unsigned long i = 0; i < framesPerBuffer; ++i) {
+        inputData3[i] = inBuffer[i];  // 세 번째 채널
+    }
 
 return paContinue;
 }
@@ -74,17 +74,18 @@ static int audioCallback4(const void *inputBuffer, void *outputBuffer,
     const PaStreamCallbackTimeInfo *timeInfo,
     PaStreamCallbackFlags statusFlags,
     void *userData) {
-float *inBuffer = (float *)inputBuffer;
+        float *inBuffer = (float *)inputBuffer;
 
-// 네 번째 입력 (마이크 4)
-for (unsigned long i = 0; i < framesPerBuffer; ++i) {
-inputData4[i] = inBuffer[i];  // 네 번째 채널
-}
+        // 네 번째 입력 (마이크 4)
+        for (unsigned long i = 0; i < framesPerBuffer; ++i) {
+        inputData4[i] = inBuffer[i];  // 네 번째 채널
+    }
 
 return paContinue;
 }
 
 int main(){
+    int EN = 0;
     PaError err = Pa_Initialize();
     if (err != paNoError) {
         std::cerr << "PortAudio 초기화 실패: " << Pa_GetErrorText(err) << std::endl;
@@ -186,27 +187,42 @@ int main(){
     std::cout << "오디오 입력을 시작합니다. 종료하려면 Ctrl+C를 누르세요..." << std::endl;
 
     while (true) {
+        // Copy the live input data into savedata arrays.
+        std::copy(inputData1, inputData1 + FRAMES_PER_BUFFER, savedata1);
+        std::copy(inputData2, inputData2 + FRAMES_PER_BUFFER, savedata2);
+        std::copy(inputData3, inputData3 + FRAMES_PER_BUFFER, savedata3);
+        std::copy(inputData4, inputData4 + FRAMES_PER_BUFFER, savedata4);
+
         float* maxPtr1 = std::max_element(inputData1, inputData1+FRAMES_PER_BUFFER);
         float* maxPtr2 = std::max_element(inputData2, inputData2+FRAMES_PER_BUFFER);
         float* maxPtr3 = std::max_element(inputData3, inputData3+FRAMES_PER_BUFFER);
         float* maxPtr4 = std::max_element(inputData4, inputData4+FRAMES_PER_BUFFER);
         if (*maxPtr1 >= THRESHOLD && *maxPtr2 >= THRESHOLD && *maxPtr3 >= THRESHOLD && *maxPtr4 >= THRESHOLD){
-            int maxIndex1 = std::distance(savedata1, maxPtr1);        
-            int maxIndex2 = std::distance(savedata2, maxPtr2);
-            int maxIndex3 = std::distance(savedata3, maxPtr3);
-            int maxIndex4 = std::distance(savedata4, maxPtr4);
-            
-            std::vector<double> vecinput1(savedata1, savedata1 + FRAMES_PER_BUFFER);
-            std::vector<double> vecinput2(savedata2, savedata2 + FRAMES_PER_BUFFER);
-            std::vector<double> vecinput3(savedata3, savedata3 + FRAMES_PER_BUFFER);
-            std::vector<double> vecinput4(savedata4, savedata4 + FRAMES_PER_BUFFER);
+            EN = EN + 1;
+            if (EN == 100){
+                int maxIndex1 = std::distance(savedata1, maxPtr1);        
+                int maxIndex2 = std::distance(savedata2, maxPtr2);
+                int maxIndex3 = std::distance(savedata3, maxPtr3);
+                int maxIndex4 = std::distance(savedata4, maxPtr4);
+                cout <<"maxindex: "<< maxIndex1 - maxIndex2 << " " << maxIndex2 - maxIndex3 << " " << maxIndex3 - maxIndex4 << " " << maxIndex4 - maxIndex1 << endl;
+                
+                std::vector<double> vecinput1(savedata1, savedata1 + FRAMES_PER_BUFFER);
+                std::vector<double> vecinput2(savedata2, savedata2 + FRAMES_PER_BUFFER);
+                std::vector<double> vecinput3(savedata3, savedata3 + FRAMES_PER_BUFFER);
+                std::vector<double> vecinput4(savedata4, savedata4 + FRAMES_PER_BUFFER);
 
-            AudioResult result = getAudioAngle(vecinput1, vecinput2, vecinput3, vecinput4);
-            cout << "계산된 최종 방향: " << result.direction << " 도" << endl;
-            cout << " 1번째 방향: " << result.angle_1 << " 도" << endl;
-            cout << " 2번째 방향: " << result.angle_2 << " 도" << endl;
-            cout << " 3번째 방향: " << result.angle_3 << " 도" << endl;
-            cout << " 4번째 방향: " << result.angle_4 << " 도" << endl;
+                AudioResult result = getAudioAngle(vecinput1, vecinput2, vecinput3, vecinput4);
+                cout << "계산된 사분면: " << result.direction << endl;
+                cout << " 1번째 방향: " << result.angle_1 << " 도 " ;
+                cout << " 2번째 방향: " << result.angle_2 << " 도 " ;
+                cout << " 3번째 방향: " << result.angle_3 << " 도 " ;
+                cout << " 4번째 방향: " << result.angle_4 << " 도" << endl;
+                cout << "최종 방향: " << (result.angle_1 + result.angle_2 + result.angle_3 + result.angle_4) / 4.0 << " 도" << endl;
+                cout << endl;
+            }
+        }
+        else {
+            EN = 0;
         }
     }
     // 스트림 종료
