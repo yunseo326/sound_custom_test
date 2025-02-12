@@ -57,7 +57,6 @@ const double SPEED_SOUND = 343.0;
 
 AudioResult calculate_8_angles(double alpha,double beta,double gamma,double omega, int direction,double frame1,double frame2,double frame3,double frame4);
 int categorize_values(double value, double value2, double value3, double value4);
-AudioResult detection(double angle1_1,double angle1_2,double angle2_1,double angle2_2,double angle3_1,double angle3_2,double angle4_1,double angle4_2);
 
 // 마이크 간 시간 차이 및 최종 방향 계산
 AudioResult process_audio(double frame1,double frame2,double frame3,double frame4) {
@@ -80,6 +79,7 @@ AudioResult process_audio(double frame1,double frame2,double frame3,double frame
     return cal_result;
 }
 
+AudioResult detection(double angle1_1,double angle1_2,double angle2_1,double angle2_2,double angle3_1,double angle3_2,double angle4_1,double angle4_2);
 #include <algorithm>
 // 마이크 간 시간 차이 및 최종 방향 계산
 AudioResult detection(double angle1_1,double angle1_2,double angle2_1,double angle2_2,double angle3_1,double angle3_2,double angle4_1,double angle4_2) {
