@@ -7,7 +7,6 @@
 #include <chrono>
 using namespace std;
 
-#include <algorithm>
 
 // FFTW에서 사용하는 복소수 타입을 정의
 typedef complex<double> Complex;
@@ -81,6 +80,7 @@ AudioResult process_audio(double frame1,double frame2,double frame3,double frame
     return cal_result;
 }
 
+#include <algorithm>
 // 마이크 간 시간 차이 및 최종 방향 계산
 AudioResult detection(double angle1_1,double angle1_2,double angle2_1,double angle2_2,double angle3_1,double angle3_2,double angle4_1,double angle4_2) {
     
