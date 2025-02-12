@@ -1,3 +1,4 @@
+/home/leemuwon/test/sound_custom_test/final/build/CMakeFiles/caldegree_main.dir
 /home/leemuwon/test/sound_custom_test/final/build/CMakeFiles/main.dir
 /home/leemuwon/test/sound_custom_test/final/build/CMakeFiles/edit_cache.dir
 /home/leemuwon/test/sound_custom_test/final/build/CMakeFiles/rebuild_cache.dir

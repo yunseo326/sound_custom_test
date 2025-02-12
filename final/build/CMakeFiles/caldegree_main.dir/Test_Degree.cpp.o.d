@@ -195,6 +195,6 @@ CMakeFiles/caldegree_main.dir/Test_Degree.cpp.o: \
  /usr/include/c++/13/bits/stl_numeric.h \
  /usr/include/c++/13/pstl/glue_numeric_defs.h \
  /usr/include/c++/13/pstl/execution_defs.h \
- /home/leemuwon/test/sound_custom_test/final/src/CalDegree.hpp \
+ /home/leemuwon/test/sound_custom_test/final/include/CalDegree.hpp \
  /usr/include/c++/13/complex /usr/include/c++/13/sstream \
  /usr/include/c++/13/bits/sstream.tcc

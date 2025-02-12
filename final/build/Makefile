@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named caldegree_main
+
+# Build rule for target.
+caldegree_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 caldegree_main
+.PHONY : caldegree_main
+
+# fast build rule for target.
+caldegree_main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/build
+.PHONY : caldegree_main/fast
+
+#=============================================================================
 # Target rules for targets named main
 
 # Build rule for target.
@@ -128,6 +141,30 @@ main: cmake_check_build_system
 main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
+
+Test_Degree.o: Test_Degree.cpp.o
+.PHONY : Test_Degree.o
+
+# target to build an object file
+Test_Degree.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/Test_Degree.cpp.o
+.PHONY : Test_Degree.cpp.o
+
+Test_Degree.i: Test_Degree.cpp.i
+.PHONY : Test_Degree.i
+
+# target to preprocess a source file
+Test_Degree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/Test_Degree.cpp.i
+.PHONY : Test_Degree.cpp.i
+
+Test_Degree.s: Test_Degree.cpp.s
+.PHONY : Test_Degree.s
+
+# target to generate assembly for a file
+Test_Degree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/Test_Degree.cpp.s
+.PHONY : Test_Degree.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -153,149 +190,167 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-src/D_calculate_8_angles.o: src/D_calculate_8_angles.cpp.o
-.PHONY : src/D_calculate_8_angles.o
+src/_calculate_8_angles.o: src/_calculate_8_angles.cpp.o
+.PHONY : src/_calculate_8_angles.o
 
 # target to build an object file
-src/D_calculate_8_angles.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/D_calculate_8_angles.cpp.o
-.PHONY : src/D_calculate_8_angles.cpp.o
+src/_calculate_8_angles.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_calculate_8_angles.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_calculate_8_angles.cpp.o
+.PHONY : src/_calculate_8_angles.cpp.o
 
-src/D_calculate_8_angles.i: src/D_calculate_8_angles.cpp.i
-.PHONY : src/D_calculate_8_angles.i
+src/_calculate_8_angles.i: src/_calculate_8_angles.cpp.i
+.PHONY : src/_calculate_8_angles.i
 
 # target to preprocess a source file
-src/D_calculate_8_angles.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/D_calculate_8_angles.cpp.i
-.PHONY : src/D_calculate_8_angles.cpp.i
+src/_calculate_8_angles.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_calculate_8_angles.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_calculate_8_angles.cpp.i
+.PHONY : src/_calculate_8_angles.cpp.i
 
-src/D_calculate_8_angles.s: src/D_calculate_8_angles.cpp.s
-.PHONY : src/D_calculate_8_angles.s
+src/_calculate_8_angles.s: src/_calculate_8_angles.cpp.s
+.PHONY : src/_calculate_8_angles.s
 
 # target to generate assembly for a file
-src/D_calculate_8_angles.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/D_calculate_8_angles.cpp.s
-.PHONY : src/D_calculate_8_angles.cpp.s
+src/_calculate_8_angles.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_calculate_8_angles.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_calculate_8_angles.cpp.s
+.PHONY : src/_calculate_8_angles.cpp.s
 
-src/D_categorize_values.o: src/D_categorize_values.cpp.o
-.PHONY : src/D_categorize_values.o
+src/_categorize_values.o: src/_categorize_values.cpp.o
+.PHONY : src/_categorize_values.o
 
 # target to build an object file
-src/D_categorize_values.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/D_categorize_values.cpp.o
-.PHONY : src/D_categorize_values.cpp.o
+src/_categorize_values.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_categorize_values.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_categorize_values.cpp.o
+.PHONY : src/_categorize_values.cpp.o
 
-src/D_categorize_values.i: src/D_categorize_values.cpp.i
-.PHONY : src/D_categorize_values.i
+src/_categorize_values.i: src/_categorize_values.cpp.i
+.PHONY : src/_categorize_values.i
 
 # target to preprocess a source file
-src/D_categorize_values.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/D_categorize_values.cpp.i
-.PHONY : src/D_categorize_values.cpp.i
+src/_categorize_values.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_categorize_values.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_categorize_values.cpp.i
+.PHONY : src/_categorize_values.cpp.i
 
-src/D_categorize_values.s: src/D_categorize_values.cpp.s
-.PHONY : src/D_categorize_values.s
+src/_categorize_values.s: src/_categorize_values.cpp.s
+.PHONY : src/_categorize_values.s
 
 # target to generate assembly for a file
-src/D_categorize_values.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/D_categorize_values.cpp.s
-.PHONY : src/D_categorize_values.cpp.s
+src/_categorize_values.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_categorize_values.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_categorize_values.cpp.s
+.PHONY : src/_categorize_values.cpp.s
 
-src/D_process_audio.o: src/D_process_audio.cpp.o
-.PHONY : src/D_process_audio.o
+src/_fft.o: src/_fft.cpp.o
+.PHONY : src/_fft.o
 
 # target to build an object file
-src/D_process_audio.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/D_process_audio.cpp.o
-.PHONY : src/D_process_audio.cpp.o
+src/_fft.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_fft.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_fft.cpp.o
+.PHONY : src/_fft.cpp.o
 
-src/D_process_audio.i: src/D_process_audio.cpp.i
-.PHONY : src/D_process_audio.i
+src/_fft.i: src/_fft.cpp.i
+.PHONY : src/_fft.i
 
 # target to preprocess a source file
-src/D_process_audio.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/D_process_audio.cpp.i
-.PHONY : src/D_process_audio.cpp.i
+src/_fft.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_fft.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_fft.cpp.i
+.PHONY : src/_fft.cpp.i
 
-src/D_process_audio.s: src/D_process_audio.cpp.s
-.PHONY : src/D_process_audio.s
+src/_fft.s: src/_fft.cpp.s
+.PHONY : src/_fft.s
 
 # target to generate assembly for a file
-src/D_process_audio.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/D_process_audio.cpp.s
-.PHONY : src/D_process_audio.cpp.s
+src/_fft.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_fft.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_fft.cpp.s
+.PHONY : src/_fft.cpp.s
 
-src/D_select_final_direction.o: src/D_select_final_direction.cpp.o
-.PHONY : src/D_select_final_direction.o
+src/_gcc_phat.o: src/_gcc_phat.cpp.o
+.PHONY : src/_gcc_phat.o
 
 # target to build an object file
-src/D_select_final_direction.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/D_select_final_direction.cpp.o
-.PHONY : src/D_select_final_direction.cpp.o
+src/_gcc_phat.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_gcc_phat.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_gcc_phat.cpp.o
+.PHONY : src/_gcc_phat.cpp.o
 
-src/D_select_final_direction.i: src/D_select_final_direction.cpp.i
-.PHONY : src/D_select_final_direction.i
+src/_gcc_phat.i: src/_gcc_phat.cpp.i
+.PHONY : src/_gcc_phat.i
 
 # target to preprocess a source file
-src/D_select_final_direction.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/D_select_final_direction.cpp.i
-.PHONY : src/D_select_final_direction.cpp.i
+src/_gcc_phat.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_gcc_phat.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_gcc_phat.cpp.i
+.PHONY : src/_gcc_phat.cpp.i
 
-src/D_select_final_direction.s: src/D_select_final_direction.cpp.s
-.PHONY : src/D_select_final_direction.s
+src/_gcc_phat.s: src/_gcc_phat.cpp.s
+.PHONY : src/_gcc_phat.s
 
 # target to generate assembly for a file
-src/D_select_final_direction.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/D_select_final_direction.cpp.s
-.PHONY : src/D_select_final_direction.cpp.s
+src/_gcc_phat.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_gcc_phat.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_gcc_phat.cpp.s
+.PHONY : src/_gcc_phat.cpp.s
 
-src/fft.o: src/fft.cpp.o
-.PHONY : src/fft.o
+src/_process_audio.o: src/_process_audio.cpp.o
+.PHONY : src/_process_audio.o
 
 # target to build an object file
-src/fft.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/fft.cpp.o
-.PHONY : src/fft.cpp.o
+src/_process_audio.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_process_audio.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_process_audio.cpp.o
+.PHONY : src/_process_audio.cpp.o
 
-src/fft.i: src/fft.cpp.i
-.PHONY : src/fft.i
+src/_process_audio.i: src/_process_audio.cpp.i
+.PHONY : src/_process_audio.i
 
 # target to preprocess a source file
-src/fft.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/fft.cpp.i
-.PHONY : src/fft.cpp.i
+src/_process_audio.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_process_audio.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_process_audio.cpp.i
+.PHONY : src/_process_audio.cpp.i
 
-src/fft.s: src/fft.cpp.s
-.PHONY : src/fft.s
+src/_process_audio.s: src/_process_audio.cpp.s
+.PHONY : src/_process_audio.s
 
 # target to generate assembly for a file
-src/fft.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/fft.cpp.s
-.PHONY : src/fft.cpp.s
+src/_process_audio.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_process_audio.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_process_audio.cpp.s
+.PHONY : src/_process_audio.cpp.s
 
-src/gcc_phat.o: src/gcc_phat.cpp.o
-.PHONY : src/gcc_phat.o
+src/_select_final_direction.o: src/_select_final_direction.cpp.o
+.PHONY : src/_select_final_direction.o
 
 # target to build an object file
-src/gcc_phat.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/gcc_phat.cpp.o
-.PHONY : src/gcc_phat.cpp.o
+src/_select_final_direction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_select_final_direction.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_select_final_direction.cpp.o
+.PHONY : src/_select_final_direction.cpp.o
 
-src/gcc_phat.i: src/gcc_phat.cpp.i
-.PHONY : src/gcc_phat.i
+src/_select_final_direction.i: src/_select_final_direction.cpp.i
+.PHONY : src/_select_final_direction.i
 
 # target to preprocess a source file
-src/gcc_phat.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/gcc_phat.cpp.i
-.PHONY : src/gcc_phat.cpp.i
+src/_select_final_direction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_select_final_direction.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_select_final_direction.cpp.i
+.PHONY : src/_select_final_direction.cpp.i
 
-src/gcc_phat.s: src/gcc_phat.cpp.s
-.PHONY : src/gcc_phat.s
+src/_select_final_direction.s: src/_select_final_direction.cpp.s
+.PHONY : src/_select_final_direction.s
 
 # target to generate assembly for a file
-src/gcc_phat.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/gcc_phat.cpp.s
-.PHONY : src/gcc_phat.cpp.s
+src/_select_final_direction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_select_final_direction.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_select_final_direction.cpp.s
+.PHONY : src/_select_final_direction.cpp.s
 
 # Help Target
 help:
@@ -305,28 +360,32 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... caldegree_main"
 	@echo "... main"
+	@echo "... Test_Degree.o"
+	@echo "... Test_Degree.i"
+	@echo "... Test_Degree.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... src/D_calculate_8_angles.o"
-	@echo "... src/D_calculate_8_angles.i"
-	@echo "... src/D_calculate_8_angles.s"
-	@echo "... src/D_categorize_values.o"
-	@echo "... src/D_categorize_values.i"
-	@echo "... src/D_categorize_values.s"
-	@echo "... src/D_process_audio.o"
-	@echo "... src/D_process_audio.i"
-	@echo "... src/D_process_audio.s"
-	@echo "... src/D_select_final_direction.o"
-	@echo "... src/D_select_final_direction.i"
-	@echo "... src/D_select_final_direction.s"
-	@echo "... src/fft.o"
-	@echo "... src/fft.i"
-	@echo "... src/fft.s"
-	@echo "... src/gcc_phat.o"
-	@echo "... src/gcc_phat.i"
-	@echo "... src/gcc_phat.s"
+	@echo "... src/_calculate_8_angles.o"
+	@echo "... src/_calculate_8_angles.i"
+	@echo "... src/_calculate_8_angles.s"
+	@echo "... src/_categorize_values.o"
+	@echo "... src/_categorize_values.i"
+	@echo "... src/_categorize_values.s"
+	@echo "... src/_fft.o"
+	@echo "... src/_fft.i"
+	@echo "... src/_fft.s"
+	@echo "... src/_gcc_phat.o"
+	@echo "... src/_gcc_phat.i"
+	@echo "... src/_gcc_phat.s"
+	@echo "... src/_process_audio.o"
+	@echo "... src/_process_audio.i"
+	@echo "... src/_process_audio.s"
+	@echo "... src/_select_final_direction.o"
+	@echo "... src/_select_final_direction.i"
+	@echo "... src/_select_final_direction.s"
 .PHONY : help
 
 

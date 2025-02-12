@@ -1,7 +1,7 @@
 CMakeFiles/main.dir/main.cpp.o: \
  /home/leemuwon/test/sound_custom_test/final/main.cpp \
  /usr/include/stdc-predef.h \
- /home/leemuwon/test/sound_custom_test/final/src/CalDegree.hpp \
+ /home/leemuwon/test/sound_custom_test/final/include/CalDegree.hpp \
  /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

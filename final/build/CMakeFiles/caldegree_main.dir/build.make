@@ -83,110 +83,110 @@ CMakeFiles/caldegree_main.dir/Test_Degree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/caldegree_main.dir/Test_Degree.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leemuwon/test/sound_custom_test/final/Test_Degree.cpp -o CMakeFiles/caldegree_main.dir/Test_Degree.cpp.s
 
-CMakeFiles/caldegree_main.dir/src/D_calculate_8_angles.cpp.o: CMakeFiles/caldegree_main.dir/flags.make
-CMakeFiles/caldegree_main.dir/src/D_calculate_8_angles.cpp.o: /home/leemuwon/test/sound_custom_test/final/src/D_calculate_8_angles.cpp
-CMakeFiles/caldegree_main.dir/src/D_calculate_8_angles.cpp.o: CMakeFiles/caldegree_main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leemuwon/test/sound_custom_test/final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/caldegree_main.dir/src/D_calculate_8_angles.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/caldegree_main.dir/src/D_calculate_8_angles.cpp.o -MF CMakeFiles/caldegree_main.dir/src/D_calculate_8_angles.cpp.o.d -o CMakeFiles/caldegree_main.dir/src/D_calculate_8_angles.cpp.o -c /home/leemuwon/test/sound_custom_test/final/src/D_calculate_8_angles.cpp
+CMakeFiles/caldegree_main.dir/src/_calculate_8_angles.cpp.o: CMakeFiles/caldegree_main.dir/flags.make
+CMakeFiles/caldegree_main.dir/src/_calculate_8_angles.cpp.o: /home/leemuwon/test/sound_custom_test/final/src/_calculate_8_angles.cpp
+CMakeFiles/caldegree_main.dir/src/_calculate_8_angles.cpp.o: CMakeFiles/caldegree_main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leemuwon/test/sound_custom_test/final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/caldegree_main.dir/src/_calculate_8_angles.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/caldegree_main.dir/src/_calculate_8_angles.cpp.o -MF CMakeFiles/caldegree_main.dir/src/_calculate_8_angles.cpp.o.d -o CMakeFiles/caldegree_main.dir/src/_calculate_8_angles.cpp.o -c /home/leemuwon/test/sound_custom_test/final/src/_calculate_8_angles.cpp
 
-CMakeFiles/caldegree_main.dir/src/D_calculate_8_angles.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/caldegree_main.dir/src/D_calculate_8_angles.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leemuwon/test/sound_custom_test/final/src/D_calculate_8_angles.cpp > CMakeFiles/caldegree_main.dir/src/D_calculate_8_angles.cpp.i
+CMakeFiles/caldegree_main.dir/src/_calculate_8_angles.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/caldegree_main.dir/src/_calculate_8_angles.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leemuwon/test/sound_custom_test/final/src/_calculate_8_angles.cpp > CMakeFiles/caldegree_main.dir/src/_calculate_8_angles.cpp.i
 
-CMakeFiles/caldegree_main.dir/src/D_calculate_8_angles.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/caldegree_main.dir/src/D_calculate_8_angles.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leemuwon/test/sound_custom_test/final/src/D_calculate_8_angles.cpp -o CMakeFiles/caldegree_main.dir/src/D_calculate_8_angles.cpp.s
+CMakeFiles/caldegree_main.dir/src/_calculate_8_angles.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/caldegree_main.dir/src/_calculate_8_angles.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leemuwon/test/sound_custom_test/final/src/_calculate_8_angles.cpp -o CMakeFiles/caldegree_main.dir/src/_calculate_8_angles.cpp.s
 
-CMakeFiles/caldegree_main.dir/src/D_categorize_values.cpp.o: CMakeFiles/caldegree_main.dir/flags.make
-CMakeFiles/caldegree_main.dir/src/D_categorize_values.cpp.o: /home/leemuwon/test/sound_custom_test/final/src/D_categorize_values.cpp
-CMakeFiles/caldegree_main.dir/src/D_categorize_values.cpp.o: CMakeFiles/caldegree_main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leemuwon/test/sound_custom_test/final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/caldegree_main.dir/src/D_categorize_values.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/caldegree_main.dir/src/D_categorize_values.cpp.o -MF CMakeFiles/caldegree_main.dir/src/D_categorize_values.cpp.o.d -o CMakeFiles/caldegree_main.dir/src/D_categorize_values.cpp.o -c /home/leemuwon/test/sound_custom_test/final/src/D_categorize_values.cpp
+CMakeFiles/caldegree_main.dir/src/_categorize_values.cpp.o: CMakeFiles/caldegree_main.dir/flags.make
+CMakeFiles/caldegree_main.dir/src/_categorize_values.cpp.o: /home/leemuwon/test/sound_custom_test/final/src/_categorize_values.cpp
+CMakeFiles/caldegree_main.dir/src/_categorize_values.cpp.o: CMakeFiles/caldegree_main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leemuwon/test/sound_custom_test/final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/caldegree_main.dir/src/_categorize_values.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/caldegree_main.dir/src/_categorize_values.cpp.o -MF CMakeFiles/caldegree_main.dir/src/_categorize_values.cpp.o.d -o CMakeFiles/caldegree_main.dir/src/_categorize_values.cpp.o -c /home/leemuwon/test/sound_custom_test/final/src/_categorize_values.cpp
 
-CMakeFiles/caldegree_main.dir/src/D_categorize_values.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/caldegree_main.dir/src/D_categorize_values.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leemuwon/test/sound_custom_test/final/src/D_categorize_values.cpp > CMakeFiles/caldegree_main.dir/src/D_categorize_values.cpp.i
+CMakeFiles/caldegree_main.dir/src/_categorize_values.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/caldegree_main.dir/src/_categorize_values.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leemuwon/test/sound_custom_test/final/src/_categorize_values.cpp > CMakeFiles/caldegree_main.dir/src/_categorize_values.cpp.i
 
-CMakeFiles/caldegree_main.dir/src/D_categorize_values.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/caldegree_main.dir/src/D_categorize_values.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leemuwon/test/sound_custom_test/final/src/D_categorize_values.cpp -o CMakeFiles/caldegree_main.dir/src/D_categorize_values.cpp.s
+CMakeFiles/caldegree_main.dir/src/_categorize_values.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/caldegree_main.dir/src/_categorize_values.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leemuwon/test/sound_custom_test/final/src/_categorize_values.cpp -o CMakeFiles/caldegree_main.dir/src/_categorize_values.cpp.s
 
-CMakeFiles/caldegree_main.dir/src/fft.cpp.o: CMakeFiles/caldegree_main.dir/flags.make
-CMakeFiles/caldegree_main.dir/src/fft.cpp.o: /home/leemuwon/test/sound_custom_test/final/src/fft.cpp
-CMakeFiles/caldegree_main.dir/src/fft.cpp.o: CMakeFiles/caldegree_main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leemuwon/test/sound_custom_test/final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/caldegree_main.dir/src/fft.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/caldegree_main.dir/src/fft.cpp.o -MF CMakeFiles/caldegree_main.dir/src/fft.cpp.o.d -o CMakeFiles/caldegree_main.dir/src/fft.cpp.o -c /home/leemuwon/test/sound_custom_test/final/src/fft.cpp
+CMakeFiles/caldegree_main.dir/src/_fft.cpp.o: CMakeFiles/caldegree_main.dir/flags.make
+CMakeFiles/caldegree_main.dir/src/_fft.cpp.o: /home/leemuwon/test/sound_custom_test/final/src/_fft.cpp
+CMakeFiles/caldegree_main.dir/src/_fft.cpp.o: CMakeFiles/caldegree_main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leemuwon/test/sound_custom_test/final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/caldegree_main.dir/src/_fft.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/caldegree_main.dir/src/_fft.cpp.o -MF CMakeFiles/caldegree_main.dir/src/_fft.cpp.o.d -o CMakeFiles/caldegree_main.dir/src/_fft.cpp.o -c /home/leemuwon/test/sound_custom_test/final/src/_fft.cpp
 
-CMakeFiles/caldegree_main.dir/src/fft.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/caldegree_main.dir/src/fft.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leemuwon/test/sound_custom_test/final/src/fft.cpp > CMakeFiles/caldegree_main.dir/src/fft.cpp.i
+CMakeFiles/caldegree_main.dir/src/_fft.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/caldegree_main.dir/src/_fft.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leemuwon/test/sound_custom_test/final/src/_fft.cpp > CMakeFiles/caldegree_main.dir/src/_fft.cpp.i
 
-CMakeFiles/caldegree_main.dir/src/fft.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/caldegree_main.dir/src/fft.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leemuwon/test/sound_custom_test/final/src/fft.cpp -o CMakeFiles/caldegree_main.dir/src/fft.cpp.s
+CMakeFiles/caldegree_main.dir/src/_fft.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/caldegree_main.dir/src/_fft.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leemuwon/test/sound_custom_test/final/src/_fft.cpp -o CMakeFiles/caldegree_main.dir/src/_fft.cpp.s
 
-CMakeFiles/caldegree_main.dir/src/gcc_phat.cpp.o: CMakeFiles/caldegree_main.dir/flags.make
-CMakeFiles/caldegree_main.dir/src/gcc_phat.cpp.o: /home/leemuwon/test/sound_custom_test/final/src/gcc_phat.cpp
-CMakeFiles/caldegree_main.dir/src/gcc_phat.cpp.o: CMakeFiles/caldegree_main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leemuwon/test/sound_custom_test/final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/caldegree_main.dir/src/gcc_phat.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/caldegree_main.dir/src/gcc_phat.cpp.o -MF CMakeFiles/caldegree_main.dir/src/gcc_phat.cpp.o.d -o CMakeFiles/caldegree_main.dir/src/gcc_phat.cpp.o -c /home/leemuwon/test/sound_custom_test/final/src/gcc_phat.cpp
+CMakeFiles/caldegree_main.dir/src/_gcc_phat.cpp.o: CMakeFiles/caldegree_main.dir/flags.make
+CMakeFiles/caldegree_main.dir/src/_gcc_phat.cpp.o: /home/leemuwon/test/sound_custom_test/final/src/_gcc_phat.cpp
+CMakeFiles/caldegree_main.dir/src/_gcc_phat.cpp.o: CMakeFiles/caldegree_main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leemuwon/test/sound_custom_test/final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/caldegree_main.dir/src/_gcc_phat.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/caldegree_main.dir/src/_gcc_phat.cpp.o -MF CMakeFiles/caldegree_main.dir/src/_gcc_phat.cpp.o.d -o CMakeFiles/caldegree_main.dir/src/_gcc_phat.cpp.o -c /home/leemuwon/test/sound_custom_test/final/src/_gcc_phat.cpp
 
-CMakeFiles/caldegree_main.dir/src/gcc_phat.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/caldegree_main.dir/src/gcc_phat.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leemuwon/test/sound_custom_test/final/src/gcc_phat.cpp > CMakeFiles/caldegree_main.dir/src/gcc_phat.cpp.i
+CMakeFiles/caldegree_main.dir/src/_gcc_phat.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/caldegree_main.dir/src/_gcc_phat.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leemuwon/test/sound_custom_test/final/src/_gcc_phat.cpp > CMakeFiles/caldegree_main.dir/src/_gcc_phat.cpp.i
 
-CMakeFiles/caldegree_main.dir/src/gcc_phat.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/caldegree_main.dir/src/gcc_phat.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leemuwon/test/sound_custom_test/final/src/gcc_phat.cpp -o CMakeFiles/caldegree_main.dir/src/gcc_phat.cpp.s
+CMakeFiles/caldegree_main.dir/src/_gcc_phat.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/caldegree_main.dir/src/_gcc_phat.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leemuwon/test/sound_custom_test/final/src/_gcc_phat.cpp -o CMakeFiles/caldegree_main.dir/src/_gcc_phat.cpp.s
 
-CMakeFiles/caldegree_main.dir/src/D_select_final_direction.cpp.o: CMakeFiles/caldegree_main.dir/flags.make
-CMakeFiles/caldegree_main.dir/src/D_select_final_direction.cpp.o: /home/leemuwon/test/sound_custom_test/final/src/D_select_final_direction.cpp
-CMakeFiles/caldegree_main.dir/src/D_select_final_direction.cpp.o: CMakeFiles/caldegree_main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leemuwon/test/sound_custom_test/final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/caldegree_main.dir/src/D_select_final_direction.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/caldegree_main.dir/src/D_select_final_direction.cpp.o -MF CMakeFiles/caldegree_main.dir/src/D_select_final_direction.cpp.o.d -o CMakeFiles/caldegree_main.dir/src/D_select_final_direction.cpp.o -c /home/leemuwon/test/sound_custom_test/final/src/D_select_final_direction.cpp
+CMakeFiles/caldegree_main.dir/src/_select_final_direction.cpp.o: CMakeFiles/caldegree_main.dir/flags.make
+CMakeFiles/caldegree_main.dir/src/_select_final_direction.cpp.o: /home/leemuwon/test/sound_custom_test/final/src/_select_final_direction.cpp
+CMakeFiles/caldegree_main.dir/src/_select_final_direction.cpp.o: CMakeFiles/caldegree_main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leemuwon/test/sound_custom_test/final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/caldegree_main.dir/src/_select_final_direction.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/caldegree_main.dir/src/_select_final_direction.cpp.o -MF CMakeFiles/caldegree_main.dir/src/_select_final_direction.cpp.o.d -o CMakeFiles/caldegree_main.dir/src/_select_final_direction.cpp.o -c /home/leemuwon/test/sound_custom_test/final/src/_select_final_direction.cpp
 
-CMakeFiles/caldegree_main.dir/src/D_select_final_direction.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/caldegree_main.dir/src/D_select_final_direction.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leemuwon/test/sound_custom_test/final/src/D_select_final_direction.cpp > CMakeFiles/caldegree_main.dir/src/D_select_final_direction.cpp.i
+CMakeFiles/caldegree_main.dir/src/_select_final_direction.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/caldegree_main.dir/src/_select_final_direction.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leemuwon/test/sound_custom_test/final/src/_select_final_direction.cpp > CMakeFiles/caldegree_main.dir/src/_select_final_direction.cpp.i
 
-CMakeFiles/caldegree_main.dir/src/D_select_final_direction.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/caldegree_main.dir/src/D_select_final_direction.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leemuwon/test/sound_custom_test/final/src/D_select_final_direction.cpp -o CMakeFiles/caldegree_main.dir/src/D_select_final_direction.cpp.s
+CMakeFiles/caldegree_main.dir/src/_select_final_direction.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/caldegree_main.dir/src/_select_final_direction.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leemuwon/test/sound_custom_test/final/src/_select_final_direction.cpp -o CMakeFiles/caldegree_main.dir/src/_select_final_direction.cpp.s
 
-CMakeFiles/caldegree_main.dir/src/D_process_audio.cpp.o: CMakeFiles/caldegree_main.dir/flags.make
-CMakeFiles/caldegree_main.dir/src/D_process_audio.cpp.o: /home/leemuwon/test/sound_custom_test/final/src/D_process_audio.cpp
-CMakeFiles/caldegree_main.dir/src/D_process_audio.cpp.o: CMakeFiles/caldegree_main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leemuwon/test/sound_custom_test/final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/caldegree_main.dir/src/D_process_audio.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/caldegree_main.dir/src/D_process_audio.cpp.o -MF CMakeFiles/caldegree_main.dir/src/D_process_audio.cpp.o.d -o CMakeFiles/caldegree_main.dir/src/D_process_audio.cpp.o -c /home/leemuwon/test/sound_custom_test/final/src/D_process_audio.cpp
+CMakeFiles/caldegree_main.dir/src/_process_audio.cpp.o: CMakeFiles/caldegree_main.dir/flags.make
+CMakeFiles/caldegree_main.dir/src/_process_audio.cpp.o: /home/leemuwon/test/sound_custom_test/final/src/_process_audio.cpp
+CMakeFiles/caldegree_main.dir/src/_process_audio.cpp.o: CMakeFiles/caldegree_main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leemuwon/test/sound_custom_test/final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/caldegree_main.dir/src/_process_audio.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/caldegree_main.dir/src/_process_audio.cpp.o -MF CMakeFiles/caldegree_main.dir/src/_process_audio.cpp.o.d -o CMakeFiles/caldegree_main.dir/src/_process_audio.cpp.o -c /home/leemuwon/test/sound_custom_test/final/src/_process_audio.cpp
 
-CMakeFiles/caldegree_main.dir/src/D_process_audio.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/caldegree_main.dir/src/D_process_audio.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leemuwon/test/sound_custom_test/final/src/D_process_audio.cpp > CMakeFiles/caldegree_main.dir/src/D_process_audio.cpp.i
+CMakeFiles/caldegree_main.dir/src/_process_audio.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/caldegree_main.dir/src/_process_audio.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leemuwon/test/sound_custom_test/final/src/_process_audio.cpp > CMakeFiles/caldegree_main.dir/src/_process_audio.cpp.i
 
-CMakeFiles/caldegree_main.dir/src/D_process_audio.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/caldegree_main.dir/src/D_process_audio.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leemuwon/test/sound_custom_test/final/src/D_process_audio.cpp -o CMakeFiles/caldegree_main.dir/src/D_process_audio.cpp.s
+CMakeFiles/caldegree_main.dir/src/_process_audio.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/caldegree_main.dir/src/_process_audio.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leemuwon/test/sound_custom_test/final/src/_process_audio.cpp -o CMakeFiles/caldegree_main.dir/src/_process_audio.cpp.s
 
 # Object files for target caldegree_main
 caldegree_main_OBJECTS = \
 "CMakeFiles/caldegree_main.dir/Test_Degree.cpp.o" \
-"CMakeFiles/caldegree_main.dir/src/D_calculate_8_angles.cpp.o" \
-"CMakeFiles/caldegree_main.dir/src/D_categorize_values.cpp.o" \
-"CMakeFiles/caldegree_main.dir/src/fft.cpp.o" \
-"CMakeFiles/caldegree_main.dir/src/gcc_phat.cpp.o" \
-"CMakeFiles/caldegree_main.dir/src/D_select_final_direction.cpp.o" \
-"CMakeFiles/caldegree_main.dir/src/D_process_audio.cpp.o"
+"CMakeFiles/caldegree_main.dir/src/_calculate_8_angles.cpp.o" \
+"CMakeFiles/caldegree_main.dir/src/_categorize_values.cpp.o" \
+"CMakeFiles/caldegree_main.dir/src/_fft.cpp.o" \
+"CMakeFiles/caldegree_main.dir/src/_gcc_phat.cpp.o" \
+"CMakeFiles/caldegree_main.dir/src/_select_final_direction.cpp.o" \
+"CMakeFiles/caldegree_main.dir/src/_process_audio.cpp.o"
 
 # External object files for target caldegree_main
 caldegree_main_EXTERNAL_OBJECTS =
 
 caldegree_main: CMakeFiles/caldegree_main.dir/Test_Degree.cpp.o
-caldegree_main: CMakeFiles/caldegree_main.dir/src/D_calculate_8_angles.cpp.o
-caldegree_main: CMakeFiles/caldegree_main.dir/src/D_categorize_values.cpp.o
-caldegree_main: CMakeFiles/caldegree_main.dir/src/fft.cpp.o
-caldegree_main: CMakeFiles/caldegree_main.dir/src/gcc_phat.cpp.o
-caldegree_main: CMakeFiles/caldegree_main.dir/src/D_select_final_direction.cpp.o
-caldegree_main: CMakeFiles/caldegree_main.dir/src/D_process_audio.cpp.o
+caldegree_main: CMakeFiles/caldegree_main.dir/src/_calculate_8_angles.cpp.o
+caldegree_main: CMakeFiles/caldegree_main.dir/src/_categorize_values.cpp.o
+caldegree_main: CMakeFiles/caldegree_main.dir/src/_fft.cpp.o
+caldegree_main: CMakeFiles/caldegree_main.dir/src/_gcc_phat.cpp.o
+caldegree_main: CMakeFiles/caldegree_main.dir/src/_select_final_direction.cpp.o
+caldegree_main: CMakeFiles/caldegree_main.dir/src/_process_audio.cpp.o
 caldegree_main: CMakeFiles/caldegree_main.dir/build.make
 caldegree_main: CMakeFiles/caldegree_main.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/leemuwon/test/sound_custom_test/final/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable caldegree_main"
