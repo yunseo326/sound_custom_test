@@ -347,7 +347,7 @@ int main(){
         std::copy(inputData2, inputData2 + FRAMES_PER_BUFFER, savedata2);
         std::copy(inputData3, inputData3 + FRAMES_PER_BUFFER, savedata3);
         std::copy(inputData4, inputData4 + FRAMES_PER_BUFFER, savedata4);
-
+        
         float* maxPtr1 = std::max_element(savedata1, savedata1+FRAMES_PER_BUFFER);
         float* maxPtr2 = std::max_element(savedata2, savedata2+FRAMES_PER_BUFFER);
         float* maxPtr3 = std::max_element(savedata3, savedata3+FRAMES_PER_BUFFER);
@@ -374,7 +374,10 @@ int main(){
                 cout << " 2번째 방향: " << result.angle_2  << " 도 " << endl;
                 cout << " 3번째 방향: " << result.angle_3  << " 도 " << endl;
                 cout << " 4번째 방향: " << result.angle_4  << " 도" << endl;
-                cout << "최종 방향: " << (result.angle_1 + result.angle_2 + result.angle_3 + result.angle_4) / 4.0 << " 도" << endl;
+
+                std::pair<double, double> best_pair = _select_final_direction({result.angle_1, result.angle_2, result.angle_3, result.angle_4});
+                cout << "최종 방향: " << best_pair.first << " " << best_pair.second << " 도" << endl;
+                cout << "최종 방향: " << (best_pair.first + best_pair.second)/2 << " 도" << endl;
                 cout << endl;
             
         }
