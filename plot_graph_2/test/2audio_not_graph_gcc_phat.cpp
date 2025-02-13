@@ -43,6 +43,10 @@ struct AudioResult{
 	int direction;
 };
 
+struct arrau_struct{
+	double values[4];
+};
+
 
 #include <iostream>
 #include <cmath>
@@ -52,19 +56,19 @@ struct AudioResult{
 const double DISTANCE_MIC = 0.4; // 마이크 간 거리
 const double SPEED_SOUND = 343.0;
 
+
 AudioResult calculate_8_angles(double alpha,double beta,double gamma,double omega, int direction,double frame1,double frame2,double frame3,double frame4);
 int categorize_values(double value, double value2, double value3, double value4);
 AudioResult detection(double angle1_1,double angle1_2,double angle2_1,double angle2_2,double angle3_1,double angle3_2,double angle4_1,double angle4_2);
+
 // 마이크 간 시간 차이 및 최종 방향 계산
 AudioResult process_audio(double frame1,double frame2,double frame3,double frame4) {
-    cout << frame1 << " " << frame2 << " " << frame3 << " " << frame4 << endl;
     AudioResult cal_result;
 
     double time_delay_1 = frame1 / SAMPLE_RATE;
     double time_delay_2 = frame2 / SAMPLE_RATE;
     double time_delay_3 = frame3 / SAMPLE_RATE;
     double time_delay_4 = frame4 / SAMPLE_RATE;
-    cout << time_delay_1 << " " << time_delay_2 << " " << time_delay_3 << " " << time_delay_4 << endl;
     
     
     double alpha = std::acos((SPEED_SOUND * time_delay_1) / DISTANCE_MIC) * 180.0 / M_PI;
@@ -72,14 +76,15 @@ AudioResult process_audio(double frame1,double frame2,double frame3,double frame
     double gamma = std::acos((SPEED_SOUND * time_delay_3) / DISTANCE_MIC) * 180.0 / M_PI;
     double omega = std::acos((SPEED_SOUND * time_delay_4) / DISTANCE_MIC) * 180.0 / M_PI;
     
-    cout << alpha << " " << beta << " " << gamma << " " << omega << endl;
-    int direction = categorize_values(alpha,beta,gamma,omega);
-    cal_result = calculate_8_angles(alpha,beta,gamma,omega,direction,frame1,frame2,frame3,frame4);    cal_result.direction = direction;
+    int direction = categorize_values(frame1,frame2,frame3,frame4);
+    
+    cal_result = calculate_8_angles(alpha,beta,gamma,omega,direction,frame1,frame2,frame3,frame4); 
+    // cout << " " << cal_result.angle_1 << " " << cal_result.angle_2 << " " << cal_result.angle_3 << " " << cal_result.angle_4 << endl;
+    cal_result.direction = direction;
     return cal_result;
 }
 
 
-#include <algorithm>
 // 마이크 간 시간 차이 및 최종 방향 계산
 AudioResult detection(double angle1_1,double angle1_2,double angle2_1,double angle2_2,double angle3_1,double angle3_2,double angle4_1,double angle4_2) {
     
@@ -93,6 +98,7 @@ AudioResult detection(double angle1_1,double angle1_2,double angle2_1,double ang
 
     vector<double> compare1 = {0,0,0};
     vector<double> compare2 = {0,0,0};
+    arrau_struct array_angle;
 
 
     for (size_t i = 0; i < 4; i++) {
@@ -124,15 +130,22 @@ AudioResult detection(double angle1_1,double angle1_2,double angle2_1,double ang
         }
         sort(pair_1.begin(), pair_1.end());
         sort(pair_2.begin(), pair_2.end());
-
-        if (pair_1[0] + pair_1[1] > pair_2[0] + pair_2[1]){
-            detection_result.angle_1 = angle_case_1[i];
+        
+        if (pair_1[0] + pair_1[1] < pair_2[0] + pair_2[1]){
+            array_angle.values[i] = angle_case_1[i];
         }
         else{
-            detection_result.angle_1 = angle_case_2[i];
+            array_angle.values[i] = angle_case_2[i];
         }
         
+        
     }
+    detection_result.angle_1 = array_angle.values[0];
+    detection_result.angle_2 = array_angle.values[1];
+    detection_result.angle_3 = array_angle.values[2];
+    detection_result.angle_4 = array_angle.values[3];
+    // cout << " " << detection_result.angle_1 << " " << detection_result.angle_2 << " " << detection_result.angle_3 << " " << detection_result.angle_4 << endl;
+
     return detection_result;
 
 }
@@ -140,23 +153,30 @@ AudioResult detection(double angle1_1,double angle1_2,double angle2_1,double ang
 
 // 4분면 정하기
 int categorize_values(double value, double value2, double value3, double value4) {
-    if (value < 90 && value3 > 90) {
-        if (value2 < 90 && value4 >= 90)
-            return 1;
-        else if (value >= 90 && value3 < 90){
-            return 2;
-        }
-        else 
-            return 0;
-    } else {
-        if (value2 < 90 && value4 > 90)
-            return 4;
-        else if (value2 >= 90 && value3 < 90){
-            return 3;
-        }
-        else
-            return 0;
-    }
+    // if (value >= 0 && value3 <= 0) {
+    //     if (value2 >= 0 && value4 <= 0){
+    //         return 1;
+    //     } 
+    //     else if (value2 <= 0 && value4 >= 0){
+    //         return 2;
+    //     } 
+    //     else {
+    //         return 0;
+    //     }
+    // } 
+    // else if (value <= 0 && value3 >= 0) {
+    //     if (value2 >= 0 && value4 <= 0) {
+    //         return 4;
+    //     } 
+    //     else if (value2 <= 0 && value3 >= 0){
+    //         return 3;
+    //     } 
+    //     else {
+    //         return 0;
+    //     }
+    // }
+
+    return 0;
 }
 
 // 초기 각도로부터 8개의 방향 각도 계산
@@ -198,11 +218,11 @@ AudioResult calculate_8_angles(double alpha,double beta,double gamma,double omeg
             //2 or 3
             case1.angle_4 = 180-omega;
             case2.angle_4 = 180+omega;
-            cout << "direction error not calculate" << endl;
-            
+            // cout << " " << case1.angle_1 << " " << case1.angle_2 << " " << case1.angle_3  << " " << case1.angle_4 << endl;
+            // cout << " " << case2.angle_1 << " " << case2.angle_2 << " " << case2.angle_3  << " " << case2.angle_4 << endl;
+
             result = detection(case1.angle_1,case2.angle_1,case1.angle_2,case2.angle_2,case1.angle_3,case2.angle_3,case1.angle_4,case2.angle_4);
-
-
+            break;
 
 
         case 1:
@@ -231,23 +251,6 @@ AudioResult calculate_8_angles(double alpha,double beta,double gamma,double omeg
                break;
     }
     return result;
-  
-}
-// 6개의 각도 중 가장 적은 오차를 보이는 두 각도를 선택하여 평균 계산
-std::pair<double, double> select_final_direction(const std::vector<double>& angles) {
-    double min_difference = std::numeric_limits<double>::infinity();
-    std::pair<double, double> best_pair = {0, 0};
-    
-    for (size_t i = 0; i < angles.size(); i++) {
-        for (size_t j = i + 1; j < angles.size(); j++) {
-            double difference = std::abs(angles[i] - angles[j]);
-            if (difference < min_difference) {
-                min_difference = difference;
-                best_pair = {angles[i], angles[j]};
-            }
-        }
-    }
-    return best_pair;
 }
 
 
@@ -458,7 +461,7 @@ int main() {
     }
 
     // 그래프 초기화
-    plt::ion();  // 인터랙티브 모드 활성화
+    // plt::ion();  // 인터랙티브 모드 활성화
 
     // 스트림 시작 (마이크 1, 마이크 2, 마이크 3, 마이크 4)
     err = Pa_StartStream(stream1);
@@ -490,39 +493,39 @@ int main() {
     // 실시간으로 오디오 데이터를 처리하고 그래프를 그리는 루프
     while (true) {
         // 네 개의 입력 데이터에 대해 실시간 그래프 갱신
-        plt::clf();  // 그래프 초기화
+        // plt::clf();  // 그래프 초기화
 
-        // 첫 번째 마이크의 오디오 데이터를 그래프에 그리기
-        plt::subplot(4, 1, 1);
-        plt::plot(std::vector<float>(inputData1, inputData1 + FRAMES_PER_BUFFER));
-        plt::title("Input 1");
+        // // 첫 번째 마이크의 오디오 데이터를 그래프에 그리기
+        // plt::subplot(4, 1, 1);
+        // plt::plot(std::vector<float>(inputData1, inputData1 + FRAMES_PER_BUFFER));
+        // plt::title("Input 1");
         
-        plt::xlim(0, FRAMES_PER_BUFFER);   // x축 범위 설정
-        plt::ylim(-0.5, 0.5);              // y축 범위 설정
+        // plt::xlim(0, FRAMES_PER_BUFFER);   // x축 범위 설정
+        // plt::ylim(-0.5, 0.5);              // y축 범위 설정
 
-        // 두 번째 마이크의 오디오 데이터를 그래프에 그리기
-        plt::subplot(4, 1, 2);
-        plt::plot(std::vector<float>(inputData2, inputData2 + FRAMES_PER_BUFFER));
-        plt::title("Input 2");
+        // // 두 번째 마이크의 오디오 데이터를 그래프에 그리기
+        // plt::subplot(4, 1, 2);
+        // plt::plot(std::vector<float>(inputData2, inputData2 + FRAMES_PER_BUFFER));
+        // plt::title("Input 2");
         
-        plt::xlim(0, FRAMES_PER_BUFFER);   // x축 범위 설정
-        plt::ylim(-0.5, 0.5);              // y축 범위 설정
+        // plt::xlim(0, FRAMES_PER_BUFFER);   // x축 범위 설정
+        // plt::ylim(-0.5, 0.5);              // y축 범위 설정
 
-        // 세 번째 마이크의 오디오 데이터를 그래프에 그리기
-        plt::subplot(4, 1, 3);
-        plt::plot(std::vector<float>(inputData3, inputData3 + FRAMES_PER_BUFFER));
-        plt::title("Input 3");
+        // // 세 번째 마이크의 오디오 데이터를 그래프에 그리기
+        // plt::subplot(4, 1, 3);
+        // plt::plot(std::vector<float>(inputData3, inputData3 + FRAMES_PER_BUFFER));
+        // plt::title("Input 3");
         
-        plt::xlim(0, FRAMES_PER_BUFFER);   // x축 범위 설정
-        plt::ylim(-0.5, 0.5);              // y축 범위 설정
+        // plt::xlim(0, FRAMES_PER_BUFFER);   // x축 범위 설정
+        // plt::ylim(-0.5, 0.5);              // y축 범위 설정
 
-        // 네 번째 마이크의 오디오 데이터를 그래프에 그리기
-        plt::subplot(4, 1, 4);
-        plt::plot(std::vector<float>(inputData4, inputData4 + FRAMES_PER_BUFFER));
-        plt::title("Input 4");
+        // // 네 번째 마이크의 오디오 데이터를 그래프에 그리기
+        // plt::subplot(4, 1, 4);
+        // plt::plot(std::vector<float>(inputData4, inputData4 + FRAMES_PER_BUFFER));
+        // plt::title("Input 4");
         
-        plt::xlim(0, FRAMES_PER_BUFFER);   // x축 범위 설정
-        plt::ylim(-0.5, 0.5);              // y축 범위 설정
+        // plt::xlim(0, FRAMES_PER_BUFFER);   // x축 범위 설정
+        // plt::ylim(-0.5, 0.5);              // y축 범위 설정
 
         // Find the index of the maximum value in all inputData arrays
         float* maxPtr1 = std::max_element(inputData1, inputData1+FRAMES_PER_BUFFER);
@@ -565,17 +568,18 @@ int main() {
              print_result = process_audio(delay12, delay23, delay34, delay41);
 
             
-	    if (print_result.direction != 0){
+	    if (1){
             // 지연 결과 출력
-            	cout << "direction " << print_result.direction << " samples" << endl;
-            	cout << "Estimated delay between mic 1 and mic 2: " << print_result.angle_1 << " samples" << endl;
-            	cout << "Estimated delay between mic 2 and mic 3: " << print_result.angle_2 << " samples" << endl;
-            	cout << "Estimated delay between mic 3 and mic 4: " << print_result.angle_3 << " samples" << endl;
-            	cout << "Estimated delay between mic 4 and mic 1: " << print_result.angle_4 << " samples" << endl;
+            	cout << "direction " << print_result.direction << " section" << endl;
+            	cout << "Estimated degree between mic 1 and mic 2: " << print_result.angle_1 << " samples" << endl;
+            	cout << "Estimated degree between mic 2 and mic 3: " << print_result.angle_2 << " samples" << endl;
+            	cout << "Estimated degree between mic 3 and mic 4: " << print_result.angle_3 << " samples" << endl;
+            	cout << "Estimated degree between mic 4 and mic 1: " << print_result.angle_4 << " samples" << endl;
+                cout <<(print_result.angle_1 + print_result.angle_2 + print_result.angle_3 + print_result.angle_4) / 4.0 << " degree" << endl;
             }
         }
         
-        plt::pause(0.01);  // 잠시 대기 (그래프 갱신을 위한 시간 조정)
+        // plt::pause(0.01);  // 잠시 대기 (그래프 갱신을 위한 시간 조정)
     }
 
     // 스트림 종료

@@ -33,6 +33,7 @@ link_directories(${PORTAUDIO_LIBRARY})
 # 실행 파일 생성
 add_executable(caldegree_main Test_Degree.cpp ${SOURCES})
 add_executable(main main.cpp ${SOURCES})
+add_executable(main_thread main_thread.cpp ${SOURCES})
 # add_executable(audio_main Test_audio.cpp ${SOURCES})
 
 
@@ -42,12 +43,17 @@ include_directories(${PROJECT_SOURCE_DIR})
 # FFTW 라이브러리 연결
 target_link_libraries(caldegree_main PRIVATE fftw3)
 target_link_libraries(main PRIVATE fftw3)
+target_link_libraries(main_thread PRIVATE fftw3)
 
 
 set(PORTAUDIO_LIBRARY /usr/lib/x86_64-linux-gnu/libportaudio.so)
 target_link_libraries(main PRIVATE ${PORTAUDIO_LIBRARY})
+target_link_libraries(main_thread PRIVATE ${PORTAUDIO_LIBRARY})
 # target_link_libraries(audio_main PRIVATE ${PORTAUDIO_LIBRARY})
 
+
+find_package(Threads REQUIRED)
+target_link_libraries(main_thread PRIVATE Threads::Threads)
 
 # 빌드 타입 설정
 if(NOT CMAKE_BUILD_TYPE)

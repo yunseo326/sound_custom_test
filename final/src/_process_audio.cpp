@@ -8,7 +8,7 @@ namespace CalDegree {
     AudioResult getAudioAngle(const vector<double> &a, const vector<double> &b, const vector<double> &c, const vector<double> &d) {
     
         AudioResult cal_result;
-        
+        double SAMPLEs_RATE= 35000;
         double frame1 = _gcc_phat(a, b);
         double frame2 = _gcc_phat(b, c);
         double frame3 = _gcc_phat(c, d);
@@ -33,7 +33,7 @@ namespace CalDegree {
         double gamma = std::acos(dist_diff_3) * 180.0 / M_PI;
         double omega = std::acos(dist_diff_4) * 180.0 / M_PI;
         
-        int direction = _categorize_values(alpha,beta,gamma,omega);
+        int direction = _categorize_values(frame1,frame2,frame3,frame4);
         cal_result = _calculate_8_angles(alpha,beta,gamma,omega,direction);
         cal_result.direction = direction;
         return cal_result;
