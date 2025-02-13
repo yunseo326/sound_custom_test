@@ -6,5 +6,5 @@ CXX_FLAGS = -O3 -DNDEBUG   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/yunseo/sound_custom_test/MWmuwon 
+CXX_INCLUDES = -I/home/yunseo/sound_custom_test/plot_graph_2/test/matplotlib-cpp -I/home/yunseo/sound_custom_test/MWmuwon 
 

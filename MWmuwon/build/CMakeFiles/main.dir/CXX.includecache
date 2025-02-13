@@ -6,7 +6,33 @@
 
 #IncludeRegexTransform: 
 
-/home/yunseo/sound_custom_test/MWmuwon/src/_categorize_values.cpp
+/home/yunseo/sound_custom_test/MWmuwon/include/CalDegree.hpp
 iostream
+-
+cmath
+-
+vector
+-
+limits
+-
+complex
+-
+
+/home/yunseo/sound_custom_test/MWmuwon/main.cpp
+include/CalDegree.hpp
+/home/yunseo/sound_custom_test/MWmuwon/include/CalDegree.hpp
+iostream
+-
+algorithm
+-
+portaudio.h
+-
+cmath
+-
+vector
+-
+thread
+-
+chrono
 -
 

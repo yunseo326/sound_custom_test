@@ -33,8 +33,15 @@ link_directories(${PORTAUDIO_LIBRARY})
 # 실행 파일 생성
 add_executable(caldegree_main Test_Degree.cpp ${SOURCES})
 add_executable(main main.cpp ${SOURCES})
+add_executable(main_thread main_thread.cpp ${SOURCES})
 # add_executable(audio_main Test_audio.cpp ${SOURCES})
 
+# Matplotlib-C++ 경로 설정 (GitHub에서 다운로드한 matplotlib-cpp 폴더 경로)
+set(MATPLOTLIB_CPP_PATH /home/yunseo/sound_custom_test/plot_graph_2/test/matplotlib-cpp)
+target_include_directories(main_thread PRIVATE ${MATPLOTLIB_CPP_PATH})
+include_directories(${MATPLOTLIB_CPP_PATH})
+find_package(Python3 REQUIRED COMPONENTS Development)  
+target_link_libraries(main_thread PRIVATE Python3::Python)
 
 # 헤더 파일 포함 디렉토리
 include_directories(${PROJECT_SOURCE_DIR})
@@ -42,12 +49,16 @@ include_directories(${PROJECT_SOURCE_DIR})
 # FFTW 라이브러리 연결
 target_link_libraries(caldegree_main PRIVATE fftw3)
 target_link_libraries(main PRIVATE fftw3)
+target_link_libraries(main_thread PRIVATE fftw3)
 
 
 set(PORTAUDIO_LIBRARY /usr/local/lib/libportaudio.so)
 target_link_libraries(main PRIVATE ${PORTAUDIO_LIBRARY})
+target_link_libraries(main_thread PRIVATE ${PORTAUDIO_LIBRARY})
 # target_link_libraries(audio_main PRIVATE ${PORTAUDIO_LIBRARY})
 
+find_package(Threads REQUIRED)
+target_link_libraries(main_thread PRIVATE Threads::Threads)
 
 # 빌드 타입 설정
 if(NOT CMAKE_BUILD_TYPE)

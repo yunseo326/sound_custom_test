@@ -1,4 +1,5 @@
 /home/yunseo/sound_custom_test/MWmuwon/build/CMakeFiles/rebuild_cache.dir
 /home/yunseo/sound_custom_test/MWmuwon/build/CMakeFiles/edit_cache.dir
+/home/yunseo/sound_custom_test/MWmuwon/build/CMakeFiles/main_thread.dir
 /home/yunseo/sound_custom_test/MWmuwon/build/CMakeFiles/main.dir
 /home/yunseo/sound_custom_test/MWmuwon/build/CMakeFiles/caldegree_main.dir

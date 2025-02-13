@@ -16,6 +16,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/home/yunseo/sound_custom_test/plot_graph_2/test/matplotlib-cpp"
   "../"
   )
 

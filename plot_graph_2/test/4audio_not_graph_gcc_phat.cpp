@@ -19,7 +19,7 @@ namespace plt = matplotlibcpp;
 
 // 샘플레이트와 버퍼 크기
 #define SAMPLE_RATE 44100
-#define FRAMES_PER_BUFFER 22050
+#define FRAMES_PER_BUFFER 44100 *10
 #define THRESHOLD 0.05
 #define DEVICE_ID1 6
 #define DEVICE_ID2 7
@@ -244,7 +244,7 @@ AudioResult calculate_8_angles(double alpha,double beta,double gamma,double omeg
                break;
     }
     return result;
-}
+}  
 // 6개의 각도 중 가장 적은 오차를 보이는 두 각도를 선택하여 평균 계산
 std::pair<double, double> select_final_direction(const std::vector<double>& angles) {
     double min_difference = std::numeric_limits<double>::infinity();
@@ -507,13 +507,13 @@ int main() {
     std::cout << "오디오 입력을 시작합니다. 종료하려면 Ctrl+C를 누르세요..." << std::endl;
 
     // 그래프 초기화
-    // plt::ion();  // 인터랙티브 모드 활성화
+    plt::ion();  // 인터랙티브 모드 활성화
     
     // 실시간으로 오디오 데이터를 처리하고 그래프를 그리는 루프
     while (true) {
         // 네 개의 입력 데이터에 대해 실시간 그래프 갱신
         
-        /*
+        
         plt::clf();  // 그래프 초기화
 
         // 첫 번째 마이크의 오디오 데이터를 그래프에 그리기
@@ -522,7 +522,7 @@ int main() {
         plt::title("Input 1");
         
         plt::xlim(0, FRAMES_PER_BUFFER);   // x축 범위 설정
-        plt::ylim(-0.5, 0.5);              // y축 범위 설정
+        plt::ylim(-0.005, 0.005);              // y축 범위 설정
 
         // 두 번째 마이크의 오디오 데이터를 그래프에 그리기
         plt::subplot(4, 1, 2);
@@ -530,7 +530,7 @@ int main() {
         plt::title("Input 2");
         
         plt::xlim(0, FRAMES_PER_BUFFER);   // x축 범위 설정
-        plt::ylim(-0.5, 0.5);              // y축 범위 설정
+        plt::ylim(-0.005, 0.005);              // y축 범위 설정
 
         // 세 번째 마이크의 오디오 데이터를 그래프에 그리기
         plt::subplot(4, 1, 3);
@@ -538,7 +538,7 @@ int main() {
         plt::title("Input 3");
         
         plt::xlim(0, FRAMES_PER_BUFFER);   // x축 범위 설정
-        plt::ylim(-0.5, 0.5);              // y축 범위 설정
+        plt::ylim(-0.005, 0.005);              // y축 범위 설정
 
         // 네 번째 마이크의 오디오 데이터를 그래프에 그리기
         plt::subplot(4, 1, 4);
@@ -546,8 +546,8 @@ int main() {
         plt::title("Input 4");
         
         plt::xlim(0, FRAMES_PER_BUFFER);   // x축 범위 설정
-        plt::ylim(-0.5, 0.5);              // y축 범위 설정
-        */
+        plt::ylim(-0.005, 0.005);              // y축 범위 설정
+        
 
         // Find the index of the maximum value in all inputData arrays
         float* maxPtr1 = std::max_element(inputData1, inputData1+FRAMES_PER_BUFFER);
@@ -605,7 +605,7 @@ int main() {
             
         }
         // std::this_thread::sleep_for(std::chrono::milliseconds(1));  // 1ms 대기
-        // plt::pause(0.01);  // 잠시 대기 (그래프 갱신을 위한 시간 조정)
+        plt::pause(0.01);  // 잠시 대기 (그래프 갱신을 위한 시간 조정)
     }
 
     // 스트림 종료
