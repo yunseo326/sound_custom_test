@@ -142,6 +142,19 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+#=============================================================================
+# Target rules for targets named main_thread
+
+# Build rule for target.
+main_thread: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main_thread
+.PHONY : main_thread
+
+# fast build rule for target.
+main_thread/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_thread.dir/build.make CMakeFiles/main_thread.dir/build
+.PHONY : main_thread/fast
+
 Test_Degree.o: Test_Degree.cpp.o
 .PHONY : Test_Degree.o
 
@@ -190,6 +203,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+main_thread.o: main_thread.cpp.o
+.PHONY : main_thread.o
+
+# target to build an object file
+main_thread.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_thread.dir/build.make CMakeFiles/main_thread.dir/main_thread.cpp.o
+.PHONY : main_thread.cpp.o
+
+main_thread.i: main_thread.cpp.i
+.PHONY : main_thread.i
+
+# target to preprocess a source file
+main_thread.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_thread.dir/build.make CMakeFiles/main_thread.dir/main_thread.cpp.i
+.PHONY : main_thread.cpp.i
+
+main_thread.s: main_thread.cpp.s
+.PHONY : main_thread.s
+
+# target to generate assembly for a file
+main_thread.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_thread.dir/build.make CMakeFiles/main_thread.dir/main_thread.cpp.s
+.PHONY : main_thread.cpp.s
+
 src/_calculate_8_angles.o: src/_calculate_8_angles.cpp.o
 .PHONY : src/_calculate_8_angles.o
 
@@ -197,6 +234,7 @@ src/_calculate_8_angles.o: src/_calculate_8_angles.cpp.o
 src/_calculate_8_angles.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_calculate_8_angles.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_calculate_8_angles.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_thread.dir/build.make CMakeFiles/main_thread.dir/src/_calculate_8_angles.cpp.o
 .PHONY : src/_calculate_8_angles.cpp.o
 
 src/_calculate_8_angles.i: src/_calculate_8_angles.cpp.i
@@ -206,6 +244,7 @@ src/_calculate_8_angles.i: src/_calculate_8_angles.cpp.i
 src/_calculate_8_angles.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_calculate_8_angles.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_calculate_8_angles.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_thread.dir/build.make CMakeFiles/main_thread.dir/src/_calculate_8_angles.cpp.i
 .PHONY : src/_calculate_8_angles.cpp.i
 
 src/_calculate_8_angles.s: src/_calculate_8_angles.cpp.s
@@ -215,6 +254,7 @@ src/_calculate_8_angles.s: src/_calculate_8_angles.cpp.s
 src/_calculate_8_angles.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_calculate_8_angles.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_calculate_8_angles.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_thread.dir/build.make CMakeFiles/main_thread.dir/src/_calculate_8_angles.cpp.s
 .PHONY : src/_calculate_8_angles.cpp.s
 
 src/_categorize_values.o: src/_categorize_values.cpp.o
@@ -224,6 +264,7 @@ src/_categorize_values.o: src/_categorize_values.cpp.o
 src/_categorize_values.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_categorize_values.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_categorize_values.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_thread.dir/build.make CMakeFiles/main_thread.dir/src/_categorize_values.cpp.o
 .PHONY : src/_categorize_values.cpp.o
 
 src/_categorize_values.i: src/_categorize_values.cpp.i
@@ -233,6 +274,7 @@ src/_categorize_values.i: src/_categorize_values.cpp.i
 src/_categorize_values.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_categorize_values.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_categorize_values.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_thread.dir/build.make CMakeFiles/main_thread.dir/src/_categorize_values.cpp.i
 .PHONY : src/_categorize_values.cpp.i
 
 src/_categorize_values.s: src/_categorize_values.cpp.s
@@ -242,6 +284,7 @@ src/_categorize_values.s: src/_categorize_values.cpp.s
 src/_categorize_values.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_categorize_values.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_categorize_values.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_thread.dir/build.make CMakeFiles/main_thread.dir/src/_categorize_values.cpp.s
 .PHONY : src/_categorize_values.cpp.s
 
 src/_fft.o: src/_fft.cpp.o
@@ -251,6 +294,7 @@ src/_fft.o: src/_fft.cpp.o
 src/_fft.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_fft.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_fft.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_thread.dir/build.make CMakeFiles/main_thread.dir/src/_fft.cpp.o
 .PHONY : src/_fft.cpp.o
 
 src/_fft.i: src/_fft.cpp.i
@@ -260,6 +304,7 @@ src/_fft.i: src/_fft.cpp.i
 src/_fft.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_fft.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_fft.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_thread.dir/build.make CMakeFiles/main_thread.dir/src/_fft.cpp.i
 .PHONY : src/_fft.cpp.i
 
 src/_fft.s: src/_fft.cpp.s
@@ -269,6 +314,7 @@ src/_fft.s: src/_fft.cpp.s
 src/_fft.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_fft.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_fft.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_thread.dir/build.make CMakeFiles/main_thread.dir/src/_fft.cpp.s
 .PHONY : src/_fft.cpp.s
 
 src/_gcc_phat.o: src/_gcc_phat.cpp.o
@@ -278,6 +324,7 @@ src/_gcc_phat.o: src/_gcc_phat.cpp.o
 src/_gcc_phat.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_gcc_phat.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_gcc_phat.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_thread.dir/build.make CMakeFiles/main_thread.dir/src/_gcc_phat.cpp.o
 .PHONY : src/_gcc_phat.cpp.o
 
 src/_gcc_phat.i: src/_gcc_phat.cpp.i
@@ -287,6 +334,7 @@ src/_gcc_phat.i: src/_gcc_phat.cpp.i
 src/_gcc_phat.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_gcc_phat.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_gcc_phat.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_thread.dir/build.make CMakeFiles/main_thread.dir/src/_gcc_phat.cpp.i
 .PHONY : src/_gcc_phat.cpp.i
 
 src/_gcc_phat.s: src/_gcc_phat.cpp.s
@@ -296,6 +344,7 @@ src/_gcc_phat.s: src/_gcc_phat.cpp.s
 src/_gcc_phat.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_gcc_phat.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_gcc_phat.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_thread.dir/build.make CMakeFiles/main_thread.dir/src/_gcc_phat.cpp.s
 .PHONY : src/_gcc_phat.cpp.s
 
 src/_process_audio.o: src/_process_audio.cpp.o
@@ -305,6 +354,7 @@ src/_process_audio.o: src/_process_audio.cpp.o
 src/_process_audio.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_process_audio.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_process_audio.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_thread.dir/build.make CMakeFiles/main_thread.dir/src/_process_audio.cpp.o
 .PHONY : src/_process_audio.cpp.o
 
 src/_process_audio.i: src/_process_audio.cpp.i
@@ -314,6 +364,7 @@ src/_process_audio.i: src/_process_audio.cpp.i
 src/_process_audio.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_process_audio.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_process_audio.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_thread.dir/build.make CMakeFiles/main_thread.dir/src/_process_audio.cpp.i
 .PHONY : src/_process_audio.cpp.i
 
 src/_process_audio.s: src/_process_audio.cpp.s
@@ -323,6 +374,7 @@ src/_process_audio.s: src/_process_audio.cpp.s
 src/_process_audio.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_process_audio.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_process_audio.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_thread.dir/build.make CMakeFiles/main_thread.dir/src/_process_audio.cpp.s
 .PHONY : src/_process_audio.cpp.s
 
 src/_select_final_direction.o: src/_select_final_direction.cpp.o
@@ -332,6 +384,7 @@ src/_select_final_direction.o: src/_select_final_direction.cpp.o
 src/_select_final_direction.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_select_final_direction.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_select_final_direction.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_thread.dir/build.make CMakeFiles/main_thread.dir/src/_select_final_direction.cpp.o
 .PHONY : src/_select_final_direction.cpp.o
 
 src/_select_final_direction.i: src/_select_final_direction.cpp.i
@@ -341,6 +394,7 @@ src/_select_final_direction.i: src/_select_final_direction.cpp.i
 src/_select_final_direction.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_select_final_direction.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_select_final_direction.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_thread.dir/build.make CMakeFiles/main_thread.dir/src/_select_final_direction.cpp.i
 .PHONY : src/_select_final_direction.cpp.i
 
 src/_select_final_direction.s: src/_select_final_direction.cpp.s
@@ -350,6 +404,7 @@ src/_select_final_direction.s: src/_select_final_direction.cpp.s
 src/_select_final_direction.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/caldegree_main.dir/build.make CMakeFiles/caldegree_main.dir/src/_select_final_direction.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/_select_final_direction.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_thread.dir/build.make CMakeFiles/main_thread.dir/src/_select_final_direction.cpp.s
 .PHONY : src/_select_final_direction.cpp.s
 
 # Help Target
@@ -362,12 +417,16 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... caldegree_main"
 	@echo "... main"
+	@echo "... main_thread"
 	@echo "... Test_Degree.o"
 	@echo "... Test_Degree.i"
 	@echo "... Test_Degree.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... main_thread.o"
+	@echo "... main_thread.i"
+	@echo "... main_thread.s"
 	@echo "... src/_calculate_8_angles.o"
 	@echo "... src/_calculate_8_angles.i"
 	@echo "... src/_calculate_8_angles.s"
