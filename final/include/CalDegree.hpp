@@ -22,7 +22,7 @@ namespace CalDegree {
         int direction;
     };
 
-    const double DISTANCE_MIC = 0.4; // 마이크 간 거리
+    const double DISTANCE_MIC = 0.2; // 마이크 간 거리
     const double SPEED_SOUND = 343.0;
     // 마이크 간 시간 차이 계산
     void _fft(CVector &signal, bool inverse = false);

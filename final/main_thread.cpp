@@ -364,11 +364,15 @@ int main(){
                 AudioResult result = getAudioAngle(vecinput1, vecinput2, vecinput3, vecinput4);
 
                 cout << "계산된 사분면: " << result.direction << endl;
-                // cout << " 1번째 방향: " << result.angle_1  << " 도 " << endl;
-                // cout << " 2번째 방향: " << result.angle_2  << " 도 " << endl;
-                // cout << " 3번째 방향: " << result.angle_3  << " 도 " << endl;
-                // cout << " 4번째 방향: " << result.angle_4  << " 도" << endl;
-                cout << "최종 방향: " << (result.angle_1 + result.angle_2 + result.angle_3 + result.angle_4) / 4.0 << " 도" << endl;
+                // // cout << " 1번째 방향: " << result.angle_1  << " 도 " << endl;
+                // // cout << " 2번째 방향: " << result.angle_2  << " 도 " << endl;
+                // // cout << " 3번째 방향: " << result.angle_3  << " 도 " << endl;
+                // // cout << " 4번째 방향: " << result.angle_4  << " 도" << endl;
+                // cout << "최종 방향: " << (result.angle_1 + result.angle_2 + result.angle_3 + result.angle_4) / 4.0 << " 도" << endl;
+
+                std::pair<double, double> best_pair = _select_final_direction({result.angle_1, result.angle_2, result.angle_3, result.angle_4});
+                cout << "최종 방향: " << best_pair.first << " " << best_pair.second << " 도" << endl;
+                cout << "최종 방향: " << (best_pair.first + best_pair.second)/2 << " 도" << endl;
                 cout << endl;
             
         }
